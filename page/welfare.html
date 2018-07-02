@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <!--<meta name="flexible" content="initial-dpr=1,maximum-dpr=1" />-->
+  <!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+  <script src="./js/index.js"></script>
+  <title>善源公益</title>
+  <link rel="stylesheet" href="./styles/base.css">
+  <style>
+    .contianer{
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .wrapper{
+      width: 100%;
+      background-color: #f4f5f6;
+    }
+    .header{
+      width: 100%;
+      /*padding:0.36rem 0.8rem 0.73rem 0.8rem;*/
+      padding:0.27rem 0 0.55rem 0;
+      background-color: #fff;
+    }
+    .header ul{
+      overflow: hidden;
+    }
+    .header .head-navTop li{
+      float: left;
+      width: 33.3%;
+      text-align: center;
+    }
+    .header .head-navTop a:last-child li{
+      margin-right: 0;
+    }
+    .header .head-navTop li img{
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    .header .head-navTop li p{
+      margin-top: 0.24rem;
+      font-size: 0.24rem;
+      color: #333;
+    }
+    .header .head-navBto li{
+      width: 25%;
+      margin-top: 0.52rem;
+      float: left;
+      text-align: center;
+    }
+    .header .head-navBto li img{
+      width: 0.78rem;
+      height: 0.78rem;
+    }
+    .header .head-navBto a:last-child li{
+      margin-right: 0;
+    }
+    /*一起公益*/
+    .together{
+      margin-top: 0.18rem;
+
+    }
+    .together>div{
+      padding-bottom: 0.44rem;
+      background-color: #fff;
+    }
+    .together .togCon{
+      padding: 0 0.5rem 0 0.22rem;
+      margin-top: 1px;
+      background-color: #fff;
+    }
+    .togCon ul li{
+      padding: 0.3rem 0;
+      border-bottom:1px solid #e1e1e1;
+      overflow: hidden;
+    }
+    .togCon  ul>a:last-child li{
+      border:none;
+    }
+    .togCon ul img{
+      float: left;
+      width: 2.01rem;
+      height: 1.41rem;
+      margin-right: 0.3rem;
+    }
+    .togCon .imgInfo{
+      float: left;
+    }
+    .togCon .imgInfo h2{
+      font-size: 0.28rem;
+      color: #333;
+    }
+    .togCon p{
+      font-size: 0.22rem;
+      color: #999;
+    }
+    .togCon .red{
+      color: #F31e37;
+    }
+    /*公益广场*/
+    .square{
+      margin-top: 0.18rem;
+    }
+    .square .squareBg{
+      display: inline-block;
+      width: 100%;
+      height: 1.31rem;
+      background: url("./images/zh166.jpg") no-repeat center;
+      background-size: cover;
+      text-align: center;
+    }
+    .square .squareBg p{
+      color: #fff;
+      /*line-height: 0.5rem;*/
+    }
+    .square .squareBg .sqp1{
+      font-size: 0.32rem;
+      padding-top: 0.15rem;
+    }
+    .square .squareBg .sqp2{
+      width: 0.43rem;
+      height: 2px;
+      margin: 0.1rem auto;
+      background-color: #fff;
+    }
+    .square .squareBg .sqp3{
+      font-size: 0.24rem;
+    }
+    /*热门任务*/
+    .task{
+      margin-top: 1px;
+      background-color: #fff;
+    }
+    .task>div{
+      padding-bottom: 0.2rem;
+    }
+    .task .taskCon{
+      padding-bottom: 0;
+    }
+    .task .togCon{
+      padding: 0 0.5rem 0 0.22rem;
+      border-top:1px solid #e1e1e1;
+      background-color: #fff;
+    }
+    .task .taskCon .togCon .place{
+      width: 4rem;
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+
+    }
+    /*志愿者组织*/
+    .organization{
+      margin-top: 0.18rem;
+
+    }
+    .organization .org{
+      background-color: #fff;
+      padding-bottom: 0.44rem;
+    }
+
+    .organization .orgCon {
+      padding: 0.3rem 0.15rem;
+      background-color: #fff;
+
+    }
+    .organization .orgCon ul{
+      overflow: hidden;
+    }
+    .organization .orgCon li{
+      float: left;
+      width: 33.3%;
+      text-align: center;
+    }
+    .organization .orgCon img{
+      width: 2.28rem;
+      height: 1.6rem;
+    }
+    .organization .orgCon p{
+      padding: 0 0.15rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-size: 0.24rem;
+      color: #333;
+    }
+    .orgTask .orgTaskCon{
+      padding: 0.3rem 0.24rem;
+      border-top:1px solid #e1e1e1;
+      background-color: #fff;
+      font-size: 0.28rem;
+      text-align: center;
+    }
+    .orgTask .orgTaskCon p{
+      color: #666;
+      text-align: left;
+    }
+    .orgTask .orgTaskCon p span{
+      color: #999;
+    }
+    .orgTask .orgTaskCon button{
+      border: 1px solid #ccc;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      border-radius:5px;
+      padding: 0.2rem 0.65rem;
+      margin-top: 0.4rem;
+      background-color: #fff;
+    }
+    /*志愿者任务*/
+    .orgTask{
+      margin-top: 0.18rem;
+    }
+    .orgTask .orgtask{
+      background-color: #fff;
+      padding-bottom: 0.44rem;
+    }
+    .noInfor{
+      width: 100%;
+      /*margin: 0 auto;*/
+      padding: 0.3rem 0;
+      background-color: #fff;
+    }
+    .noInfor .noCon{
+      width: 2.2rem;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .noInfor img{
+      float: left;
+      margin-right: 0.22rem;
+      width: 0.81rem;
+      height: 0.85rem;
+    }
+    .noInfor p{
+      font-size: 0.24rem;
+      color: #999;
+      float: left;
+      margin-top: 0.3rem;
+    }
+    /*公益公司*/
+    .company{
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+    .company .comTit{
+      padding-bottom: 0.44rem;
+    }
+    .company .noInfor{
+      border-top:1px solid #e1e1e1;
+    }
+    .company .square .squareBg{
+      background: url("./images/zh168.jpg") no-repeat center;
+      -webkit-background-size:cover;
+      background-size:cover;
+    }
+    .company .comInfo{
+      border-top: 1px solid #e1e1e1;
+      padding: 0.3rem 0.27rem;
+      position: relative;
+    }
+    .company .comInfo p{
+      font-size: 0.28rem;
+      color: #666;
+    }
+    .company .comInfo p span{
+      color: #333;
+    }
+    .company .comInfo p .red{
+      color: #F31e37;
+    }
+    .company .comInfo .btn{
+      position: absolute;
+      top: 0.3rem;
+      right: 0.4rem;
+    }
+    .comInfo .btn button{
+      padding: 0.14rem 0.44rem;
+      border:none;
+      background-color: #F31e37;
+      color: #fff;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      font-size: 0.28rem ;
+    }
+    /*一起联盟*/
+    .union{
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+    .union .square .squareBg{
+      background: url("./images/zh167.jpg") no-repeat center;
+      -webkit-background-size:cover;
+      background-size:cover;
+    }
+    .unionCon {
+      width: 100%;
+    }
+    .unionCon img{
+      width: 100%;
+    }
+
+    /*公共样式*/
+    .togHead{
+      width: 3.72rem;
+      height: 0.94rem;
+      line-height: 0.94rem;
+      margin: 0 auto;
+      overflow: hidden;
+      /*padding-top: 0.15rem;*/
+      /*padding-bottom: 0.587rem;*/
+    }
+    .togHead>div{
+      width: 0.65rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+    }
+    .togHead .togLeft{
+      float: left;
+      height: 0.94rem;
+      background: url("./images/icon-lc.png") no-repeat center;
+      background-size: contain;
+    }
+    .togHead .togRight{
+      float: right;
+      height: 0.94rem;
+      background: url("./images/icon-rc.png") no-repeat center;
+      background-size: contain;
+    }
+    .togHead .togTit{
+      height: 0.94rem;
+      line-height: 0.94rem;
+      float: left;
+      width: 2.18rem;
+      padding-top: 0.15rem;
+      font-size: 0.3rem;
+      color: #333;
+      text-align: center;
+    }
+    .togFont{
+      padding-top: 0.28rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.18rem;
+      color: #999;
+    }
+
+    .teamOrg{
+      width: 100%;
+      height: 0.6rem;
+      position: relative;
+      line-height: 0.6rem;
+      padding-left: 0.57rem;
+      font-size: 0.24rem;
+      color: #666;
+    }
+    .teamOrg img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.49rem;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <!--导航-->
+    <div class="header">
+      <div class="head-navTop">
+        <ul>
+          <a href="#">
+            <li>
+              <img src="./images/zh213.png" alt="sy_sale">
+              <p>捐款</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/sy_sale.png" alt="sy_sale">
+              <p>捐款</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/zh214.png" alt="sy_sale">
+              <p>捐款</p>
+            </li>
+          </a>
+        </ul>
+      </div>
+      <div class="head-navBto">
+        <ul>
+          <a href="#">
+            <li>
+              <img src="./images/zh216.png" alt="icon">
+              <p>健康公益</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/zh217.png" alt="icon">
+              <p>秒针公益</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/zh218.png" alt="icon">
+              <p>知识公益</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/zh219.png" alt="icon">
+              <p>我的公益</p>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <!--一起公益-->
+    <div class="together">
+      <div>
+        <div class="togHead">
+          <div class="togLeft"></div>
+          <div class="togTit">一起公益</div>
+          <div class="togRight"></div>
+        </div>
+        <div class="togFont">参与社会公益，共担社会责任</div>
+      </div>
+      <div class="togCon">
+        <ul>
+          <a href="#">
+            <li>
+              <img src="./images/icon-jin.jpg" alt="进行中">
+              <div class="imgInfo">
+                <h2>公益活动公益活动公益活动</h2>
+                <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                <p>时&nbsp;&nbsp;&nbsp;&nbsp;间：<span>2017.03.20</span></p>
+                <p>已参与：<span class="red">1981</span>人</p>
+              </div>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/icon-jin.jpg" alt="进行中">
+              <div class="imgInfo">
+                <h2>公益活动公益活动公益活动</h2>
+                <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                <p>时&nbsp;&nbsp;&nbsp;&nbsp;间：<span>2017.03.20</span></p>
+                <p>已参与：<span class="red">1981</span>人</p>
+              </div>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/icon-jin.jpg" alt="进行中">
+              <div class="imgInfo">
+                <h2>公益活动公益活动公益活动</h2>
+                <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                <p>时&nbsp;&nbsp;&nbsp;&nbsp;间：<span>2017.03.20</span></p>
+                <p>已参与：<span class="red">1981</span>人</p>
+              </div>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/icon-jin.jpg" alt="进行中">
+              <div class="imgInfo">
+                <h2>公益活动公益活动公益活动</h2>
+                <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                <p>时&nbsp;&nbsp;&nbsp;&nbsp;间：<span>2017.03.20</span></p>
+                <p>已参与：<span class="red">1981</span>人</p>
+              </div>
+            </li>
+          </a>
+        </ul>
+      </div>
+      <div class="more">
+        <a href="#">查看更多公益项目 ></a>
+      </div>
+    </div>
+    <!--公益广场-->
+    <div class="square">
+      <a href='#' class="squareBg">
+        <p class="sqp1">志愿者广场</p>
+        <p class="sqp2"></p>
+        <p class="sqp3">发布领取志愿者公益任务</p>
+      </a>
+    </div>
+    <!--热门任务-->
+    <div class="task">
+      <div>
+        <div class="togHead">
+          <div class="togLeft"></div>
+          <div class="togTit">热门任务</div>
+          <div class="togRight"></div>
+        </div>
+      </div>
+      <div class="taskCon">
+        <div class="togCon">
+          <ul>
+            <a href="#">
+              <li>
+                <img src="./images/icon-jin.jpg" alt="进行中">
+                <div class="imgInfo">
+                  <h2>公益活动公益活动公益活动</h2>
+                  <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                  <p class="place">地&nbsp;&nbsp;&nbsp;&nbsp;点：<span>北京市xxxxxxxxxxxxxxxxxxxxx</span></p>
+                  <p>已报名：<span class="red">1981</span>人</p>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <img src="./images/icon-jin.jpg" alt="进行中">
+                <div class="imgInfo">
+                  <h2>公益活动公益活动公益活动</h2>
+                  <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                  <p class="place">地&nbsp;&nbsp;&nbsp;&nbsp;点：<span>北京市xxxxxxxxxxxxxxxxxxxxx</span></p>
+                  <p>已报名：<span class="red">1981</span>人</p>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <img src="./images/icon-jin.jpg" alt="进行中">
+                <div class="imgInfo">
+                  <h2>公益活动公益活动公益活动</h2>
+                  <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                  <p class="place">地&nbsp;&nbsp;&nbsp;&nbsp;点：<span>北京市xxxxxxxxxxxxxxxxxxxxx</span></p>
+                  <p>已报名：<span class="red">1981</span>人</p>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <img src="./images/icon-jin.jpg" alt="进行中">
+                <div class="imgInfo">
+                  <h2>公益活动公益活动公益活动</h2>
+                  <p>类&nbsp;&nbsp;&nbsp;&nbsp;型：<span>义卖</span></p>
+                  <p class="place">地&nbsp;&nbsp;&nbsp;&nbsp;点：<span>北京市xxxxxxxxxxxxxxxxxxxxx</span></p>
+                  <p>已报名：<span class="red">1981</span>人</p>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="#">进入广场，查看更多任务 ></a>
+        </div>
+      </div>
+    </div>
+    <!--志愿者组织-->
+    <div class="organization">
+      <div class="org">
+        <div class="togHead">
+          <div class="togLeft"></div>
+          <div class="togTit">志愿者组织</div>
+          <div class="togRight"></div>
+        </div>
+      </div>
+      <div class="teamOrg">
+        <img src="./images/zh159.png" alt="icon">
+        员工志愿者组织
+      </div>
+      <div class="orgCon">
+        <ul>
+          <a href="#">
+            <li>
+              <img src="./images/icon-sky.jpg" alt="sky">
+              <p>北京分行组织捐款北京分行组织捐款 活动不记得回活动不记得回</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/icon-sky.jpg" alt="sky">
+              <p>北京分行组织捐款北京分行组织捐款 活动不记得回活动不记得回</p>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <img src="./images/icon-sky.jpg" alt="sky">
+              <p>北京分行组织捐款北京分行组织捐款 活动不记得回活动不记得回</p>
+            </li>
+          </a>
+        </ul>
+      </div>
+      <div class="more">
+        <a href="#">查看所有组织 ></a>
+      </div>
+    </div>
+    <!--志愿者任务-->
+    <div class="orgTask">
+      <div class="orgtask">
+        <div class="togHead">
+          <div class="togLeft"></div>
+          <div class="togTit">志愿者任务</div>
+          <div class="togRight"></div>
+        </div>
+      </div>
+      <div class="orgTaskCon">
+        <p>我最近参与的任务：<span>您还没有参与哦！</span></p>
+        <p>我最近发布的任务：<span>关爱留守儿童</span></p>
+        <button type="button">发布任务</button>
+      </div>
+      <div class="teamOrg">
+        <img src="./images/zh159.png" alt="icon">
+        我的志愿队发布的任务
+      </div>
+      <!--暂无数据-->
+      <div class="noInfor">
+        <div class="noCon">
+          <img src="./images/zh160.png" alt="noinfor">
+          <p>暂无数据</p>
+        </div>
+      </div>
+    </div>
+    <!--公益单位-->
+    <div class="company">
+      <div class="square">
+        <a href='#' class="squareBg">
+          <p class="sqp1">我的公益主张</p>
+          <p class="sqp2"></p>
+          <p class="sqp3">建立您专属的公益资金账户，按照您的要求使用</p>
+        </a>
+      </div>
+      <div class="comTit">
+        <div class="togHead">
+          <div class="togLeft"></div>
+          <div class="togTit">单位公益</div>
+          <div class="togRight"></div>
+        </div>
+        <div class="togFont">单位建立的公益资金账户，单位出资，员工一起使用</div>
+      </div>
+      <!--数据-->
+      <div class="comInfo">
+        <!--<div class="comFont">-->
+        <!--<div class="comPrice">资金名称：</div>-->
+        <!--<div class="comMoney">善源基金</div>-->
+        <!--</div>-->
+        <!--<div class="comFont">-->
+        <!--<div class="comPrice">当前余额：</div>-->
+        <!--<div class="comMoney red">10,000</div>-->
+        <!--<div class="comPrice">元</div>-->
+        <!--</div>-->
+        <!--<div class="comFont">-->
+        <!--<div class="comPrice">最近使用：</div>-->
+        <!--<div class="comMoney">2017年3月23日参加自闭症儿童关爱活动，购卖爱心礼包</div>-->
+        <!--<div class="comPrice">元</div>-->
+        <!--</div>-->
+        <p>资金名称：<span>善源基金</span></p>
+        <p>当前余额：<span class="red">10,000</span>元</p>
+        <p>最近使用：<span>2017年3月23日参加自闭症儿童关爱活动，购卖爱心礼包</span></p>
+        <div class="btn">
+          <button type="button">捐入</button>
+          <button type="button">使用</button>
+        </div>
+      </div>
+      <!--暂无数据-->
+      <div class="noInfor" style="display: none">
+        <div class="noCon">
+          <img src="./images/zh160.png" alt="noinfor">
+          <p>暂无数据</p>
+        </div>
+      </div>
+    </div>
+    <!--一起联盟-->
+    <div class="union">
+      <div class="square">
+        <a href='#' class="squareBg">
+          <p class="sqp1">一起公益联盟</p>
+          <p class="sqp2"></p>
+          <p class="sqp3">参与社会公益，共担社会责任</p>
+        </a>
+      </div>
+      <div class="unionCon">
+        <a href="#">
+          <img src="./images/zh220.jpg" alt="icon">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

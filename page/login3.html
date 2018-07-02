@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <script src="./js/index.js"></script>
+  <title>邀请码</title>
+  <link rel="stylesheet" href="./styles/base.css">
+  <style>
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+    .contianer {
+      max-width: 1024px;
+      margin: 0 auto;
+      height: 100%;
+    }
+    .wrapper{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .title{
+      width: 100%;
+      padding: 0.65rem 0 0.27rem 0;
+      text-align: center;
+    }
+    .title img{
+      width: 2.85rem;
+      height: 1.26rem;
+    }
+    .photo{
+      width: 1.8rem;
+      height: 1.8rem;
+      margin: 0 auto;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      border-radius:50%;
+      text-align: center;
+    }
+    .photo .img1{
+      width: 100%;
+      height: 100%;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      border-radius:50%;
+    }
+    .userInfo{
+      padding: 0 0.76rem;
+      margin-top: 1.05rem;
+      font-size: 0.3rem;
+      color: #666;
+    }
+    .userInfo span{
+      display: inline-block;
+      height: 0.72rem;
+      line-height: 0.72rem;
+    }
+    .userInfo .nameIn{
+      float: right;
+      width: 4.7rem;
+      height: .72rem;
+      line-height: .72rem;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 0.7rem;
+    }
+    .userInfo .name input{
+      /*color: #999;*/
+      width: 4.7rem;
+      height: .52rem;
+      line-height: .52rem;
+      background: 0;
+      border:none;
+    }
+
+    .btn{
+      width: 6rem;
+      height: .88rem;
+      line-height: .88rem;
+      text-align: center;
+      color: #fff;
+      background: #f31e37;
+      border-radius: .44rem;
+      margin: .1rem auto .4rem;
+      box-shadow: 0 0.1rem 0.16rem rgba(182,0,42,.25);
+      font-size: 0.3rem;
+    }
+    .reg{
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+    .reg a{
+      font-size: 0.28rem;
+      color: #0759b5;
+    }
+  </style>
+</head>
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <div class="title">
+      <img src="images/login/welcome.png" alt="titlt">
+    </div>
+    <div class="photo">
+      <img class="img1" src="./images/login/photo.png" alt="头像">
+    </div>
+    <div class="userInfo">
+      <div class="name cle ">
+        <span>邀请码：</span>
+        <div class="nameIn">
+          <input type="text" placeholder="邀请码为4位数字">
+        </div>
+      </div>
+    </div>
+    <div class="btn">完成</div>
+    <div class="reg">
+      <a href="javascript:;">无码进入&gt;</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {
+  margin: 0;
+  padding: 0
+}
+
+body, button, input, select, textarea p span{
+  font: 12px/1.5 MicrosoftYaHei, arial, verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal
+}
+body ,input,textarea,a{
+  outline:none;
+}
+
+li {
+  list-style: none
+}
+
+fieldset, img {
+  border: 0
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+q:before, q:after {
+  content: ''
+}
+
+button, input, select, textarea {
+  font-size: 100%
+}
+
+legend {
+  color: #000
+}
+
+small {
+  font-size: 12px
+}
+
+hr {
+  border: none;
+  height: 1px
+}
+
+a {
+  text-decoration: none;
+  color:#666;
+}
+
+a:hover {
+  text-decoration: underline
+}
+a:focus{
+  text-decoration:none;
+}
+
+i{
+  display: inline-block;
+}
+
+div{
+  box-sizing: border-box;
+}
+.cle:after{
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.cle {
+  /* 触发 hasLayout */
+  zoom: 1;
+}
+/*.cle:after {*/
+  /*content: " ";*/
+  /*display: block;*/
+  /*height: 0;*/
+  /*clear: both;*/
+  /*visibility: hidden*/
+/*}*/
+
+/*.cle {*/
+  /*display: inline-block*/
+/*}*/
+
+/*.cle {*/
+  /*display: block*/
+/*}*/
+
+/*.clear {*/
+  /*clear: both;*/
+/*}*/
+
+/*查看更多*/
+.more {
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #e1e1e1;
+}
+
+.more a {
+  font-size: 0.24rem;
+  color: #666;
+}
+
+
+
+/*适配*/
+@media only screen and (max-width: 320px){html{font-size:42.66px;} }
+@media only screen and (min-width: 321px) and (max-width: 352px){html{font-size: 46px;} }
+@media only screen and (min-width: 353px) and (max-width: 370px){html{font-size: 48px;} }
+@media only screen and (min-width: 371px) and (max-width: 380px){html{font-size: 50px;} }
+@media only screen and (min-width: 381px) and (max-width: 390px){html{font-size: 52px;} }
+@media only screen and (min-width: 391px) and (max-width: 400px){html{font-size: 53px;} }
+@media only screen and (min-width: 401px) and (max-width: 410px){html{font-size: 54px;} }
+@media only screen and (min-width: 411px) and (max-width: 413px){html{font-size: 54.8px;} }
+@media only screen and (min-width: 414px) and (max-width: 420px){html{font-size: 55.2px;} }
+@media only screen and ( min-width:421px) and ( max-width:440px){ html{ font-size:58px;}}
+@media only screen and ( min-width:441px) and ( max-width:699px){ html{ font-size:58px;}}
+@media only screen and ( min-width:700px) and (max-width: 768px){ html{ font-size:102.4px;}}
+@media only screen and ( min-width:769px) and (max-width: 800px){ html{ font-size:106.667px;}}
+@media only screen and ( min-width:801px) and (max-width: 1024px){ html{ font-size:136.533px;}}
+@media only screen and ( min-width:1024px) { html{ font-size:136.533px;}}

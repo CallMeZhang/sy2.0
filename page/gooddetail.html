@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <script src="./js/index.js"></script>
+  <title>商品详情页</title>
+  <link rel="stylesheet" href="./styles/base.css">
+  <style>
+    .contianer{
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .wrapper{
+      width: 100%;
+      background-color: #f3f3f3;
+      padding-bottom: 1rem;
+    }
+    .header{
+      width: 100%;
+      background-color: #fff;
+    }
+    .header .headImg{
+      position: relative;
+      width: 100%;
+      height: 5.24rem;
+      overflow: hidden;
+    }
+    .header .headImg img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      width: 100%;
+      min-height: 5.24rem;
+    }
+    .header .headImgInfo{
+      position: absolute;
+      bottom: 0.2rem;
+      right: 0.1rem;
+    }
+    .header .headImgInfo span{
+      display: inline-block;
+      width: 1.44rem;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      margin-right: 0.1rem;
+      text-align: center;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid #fff;
+      -webkit-border-radius:0.06rem;
+      -moz-border-radius:0.06rem;
+      border-radius:0.06rem;
+      font-size: 0.24rem;
+      color: #fff;
+    }
+    .header .headImgTit{
+      padding: .26rem .2rem .3rem;
+    }
+    .header .headImgTit h2{
+      font-size: 0.34rem;
+      padding-top: 0.01rem;
+      line-height: 0.5rem;
+    }
+    .header .headImgTit p{
+      line-height: 0.4rem;
+      margin-top: 0.16rem;
+      color: rgb(177, 177, 177);
+      font-size: 0.26rem;
+    }
+
+    .goodPrice{
+      position: relative;
+      padding: 0.2rem;
+      background-color: #fff;
+      /*height: 0.87rem;*/
+    }
+    .goodPrice .price{
+      float: left;
+      margin-top: 0.2rem;
+      margin-right: 0.5rem;
+      font-size: 0.26rem;
+      font-weight: 600;
+      color: rgb(191, 24, 24);
+    }
+    .goodPrice .price span{
+      font-size: 0.48rem;
+    }
+    .goodPrice .priceLine{
+      display: inline-block;
+      float: left;
+      width: 0.09rem;
+      height: 1.11rem;
+      background:url("./images/gooddetail/icon-line.png") no-repeat center;
+      -webkit-background-size:cover;
+      background-size:cover;
+    }
+    .goodPrice .priceInfo{
+      float: left;
+      position: absolute;
+      right: 1.7rem;
+      top: 0;
+    }
+    .goodPrice .priceInfo>div{
+      float: left;
+    }
+    .goodPrice .priceInfo.sec{
+      top:0.25rem;
+    }
+    .goodPrice .priceInfo .pricePoor {
+      color: rgb(96, 96, 96);
+      font-size: 0.28rem;
+      padding-left: .2rem;
+      height: 1rem;
+      line-height: .5rem;
+    }
+    .goodPrice .priceInfo .priceJf{
+      color: rgb(177, 177, 177);
+      font-size: 0.28rem;
+      padding-left: .4rem;
+      height: 1rem;
+      line-height: .5rem;
+    }
+    .goodPrice .tip{
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      display: inline-block;
+      width: 0.28rem;
+      height: 0.28rem;
+      background:url("./images/gooddetail/icon-tip.png") no-repeat center;
+      -webkit-background-size:cover;
+      background-size:cover;
+    }
+
+    .help{
+      width: 100%;
+      padding: 0.4rem 0.65rem;
+      background-color: #fff;
+    }
+    .help li{
+      float: left;
+      width: 33.3%;
+      text-align: center;
+      font-size: .24rem;
+      color: #606060;
+    }
+    .help li img{
+      width: 1rem;
+      height: 1rem;
+      background-color: #fff;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      border-radius:50%;
+    }
+    .help li p{
+      margin-top: 0.1rem;
+      font-size: 0.24rem;
+    }
+
+    .ps{
+      padding: 0.1rem 0.2rem;
+      color: #666;
+      font-size: .28rem;
+      background-color: #fff;
+    }
+    .ps .gg{
+      margin-bottom:0.48rem;
+    }
+    .ps .gg li{
+      float: left;
+      font-size: 0.28rem;
+    }
+    .ps .gg li:nth-child(2) p{
+      width: 2.5rem;
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+      text-align: left;
+    }
+    .ps .gg li:nth-child(2){
+      margin-right: 0.44rem;
+    }
+    .ps .gg li .red{
+      color: #BF1818;
+    }
+    .ps .free span{
+      float: left;
+    }
+    .ps .free span:nth-child(2){
+      float: right;
+      margin-right: 0.98rem;
+      color: #B1B1B1;
+      font-size: 0.28rem;
+    }
+    .ps .free p{
+      float: right;
+      color: #B1B1B1;
+      font-size: 0.28rem;
+      margin-right: 0.4rem;
+      margin-left: 1.4rem;
+      padding-top: 0.1rem;
+    }
+    .ps .rz{
+      margin-top: 0.44rem;
+      padding-bottom: 0.4rem;
+    }
+    .ps .rz p{
+      float: left;
+      width: 1.4rem;
+    }
+    .ps .rz ul{
+      float: left;
+      width: 80%;
+      /*width:calc(100% - 1.4rem);*/
+      /*width:-webkit-calc(100% - 1.4rem);*/
+    }
+    .ps .rz li{
+      float: left;
+      width: 50%;
+      text-align: left;
+      position: relative;
+    }
+    .ps .rz li i{
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      /*vertical-align: middle;*/
+    }
+    .ps .rz li .dg{
+      width: 0.3rem;
+      height: 0.3rem;
+      background: url("./images/gooddetail/icon-dg.png") no-repeat center;
+      -webkit-background-size:cover;
+      background-size:cover;
+    }
+    .ps .rz li .bc{
+      width: 0.28rem;
+      height: 0.28rem;
+      background: url("./images/gooddetail/icon-bc.png") no-repeat center;
+      -webkit-background-size:cover;
+      background-size:cover;
+    }
+    .ps .rz ul li span{
+      padding:0 0.1rem 0 0.4rem;
+    }
+
+    .helpTips{
+      background: rgba(104,179,234,.1);
+      padding: 0.1rem;
+    }
+    .helpTips .helpTipCon{
+      width: 100%;
+      background: #fff;
+      padding: .4rem .12rem;
+    }
+    .helpTips .helpTipCon .helpTipConTit{
+      width: 6.58rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      margin: 0 auto;
+    }
+    .helpTips .helpTipCon .helpTipConTit>div{
+      float: left;
+    }
+    .helpTips .helpTipCon .helpTipConTit .tipLeft{
+      width: 2.04rem;
+      height: 0.5rem;
+      background: url("./images/gooddetail/leaf_left.png") no-repeat center;
+      -webkit-background-size:contain;
+      background-size:contain;
+    }
+    .helpTips .helpTipCon .helpTipConTit .tipRight{
+      width: 2.04rem;
+      height: 0.5rem;
+      background: url("./images/gooddetail/leaf_right.png") no-repeat center;
+      -webkit-background-size:contain;
+      background-size:contain;
+    }
+    .helpTips .helpTipCon .helpTipConTit .tipTit{
+      width: 2.5rem;
+      text-align: center;
+      font-size: 0.34rem;
+      color: #606060;
+    }
+    .helpTips .helpTipCon .helpCon{
+      padding: .3rem .1rem 0;
+      line-height: .4rem;
+    }
+    .helpTips .helpTipCon .helpCon h3{
+      padding: .18rem 0 .14rem;
+      font-size: .28rem;
+      color: #606060;
+    }
+    .helpTips .helpTipCon .helpCon .ans{
+      font-size: .26rem;
+      color: #b2b2b2;
+      line-height: .4rem;
+    }
+    .helpTips .helpTipCon .helpCon .callP{
+      padding-top: 0.3rem;
+    }
+    .helpTips .helpTipCon .helpCon .callP p{
+      float: left;
+      color: rgb(178, 178, 178);
+      font-size: 0.26rem;
+    }
+    .helpTips .helpTipCon .helpCon .callP a{
+      padding-left: .36rem;
+      font-size: .26rem;
+      color: #68b3eb;
+      position: relative;
+    }
+    .helpTipCon .helpCon .callP a i{
+      display: inline-block;
+      width: 0.28rem;
+      height: 0.28rem;
+      background:url("./images/gooddetail/phone.png") no-repeat center;
+      /*background-size: .28rem .28rem;*/
+      -webkit-background-size:contain;
+      background-size:contain;
+      /*vertical-align: middle;*/
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .helper{
+      padding: 0.4rem 0.2rem;
+      background-color: #fff;
+    }
+    .helper .helperCon h2{
+      font-size: .34rem;
+    }
+    .helper .helperCon .helperName{
+      padding: 0.36rem 0;
+    }
+    .helper .helperCon .helperName>div{
+      float: left;
+      font-size: 0.28rem;
+      color: #606060;
+    }
+    .helper .helperCon .helperName .nameLeft .from{
+      color: #B1B1B1;
+      padding-left: 0.48rem;
+    }
+    .helper .helperCon .helperName .nameRight{
+      float: right;
+    }
+    .helper .helperCon .helperName .nameRight a{
+      font-size: .24rem;
+      color: #66b2ea;
+      padding: .09rem .38rem .09rem .18rem;
+      border: .02rem solid #66b2ea;
+      border-radius: .12rem;
+      background: url('./images/gooddetail/gt_blue.png') no-repeat 88%;
+      background-size: .12rem .2rem;
+    }
+    .helper .helperCon .helperInfo{
+      width: 100%;
+    }
+    .helper .helperCon .helperInfo ul{
+      width: 100%;
+    }
+    .helper .helperCon .helperInfo li{
+      position: relative;
+      float: left;
+      width: 25%;
+      box-sizing: border-box;
+      color: #999;
+      line-height: .4rem;
+      font-size: 0.24rem;
+    }
+    .helper .helperCon .helperInfo li:first-child{
+      padding-left: 0;
+    }
+    .helper .helperCon .helperInfo li:before{
+      content: "";
+      position: absolute;
+      right: .2rem;
+      top: .2rem;
+      width: 1px;
+      height: .46rem;
+      background: #ddd;
+    }
+    .helper .helperCon .helperInfo li:last-child::before{
+      content: "";
+      width: 0;
+    }
+    .helper .helperCon .helperInfo .red{
+      color: #bf1818;
+    }
+    .helper .helperCon .helperInfo .green{
+      color: #15a404;
+    }
+    .helper .helperCon .helperMsg{
+      font-size: 0.24rem;
+      color: rgb(153, 153, 153);
+      line-height: 0.4rem;
+    }
+
+    .goodsInfo{
+      margin-top: .24rem;
+      background-color: #fff;
+    }
+    .goodsInfo .goodsTit{
+      padding: 0 0.2rem;
+    }
+    .goodsInfo .goodsTit h3{
+      font-size: 0.34rem;
+      color: #333;
+      padding-top: .5rem;
+    }
+    .goodsInfo pre{
+      white-space: pre-wrap;
+      padding: 0.4rem 0.2rem 0;
+      /*padding-top: 0.4rem;*/
+      color: #666;
+      font-size: .28rem;
+      line-height: .44rem;
+    }
+    .goodsInfo .goodsImg{
+      padding-bottom: 0.5rem;
+    }
+    .goodsInfo .goodsImg li{
+      width: 100%;
+      height: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .goodsInfo .goodsImg li img{
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 100%;
+      min-height: 5rem;
+    }
+
+    .score{
+      margin-top: .24rem;
+      padding: 0.5rem 0.2rem 0;
+      background-color: #fff;
+    }
+    .score .noScore .noPop{
+      color: rgb(153, 153, 153);
+      font-size: 0.26rem;
+      float: right;
+    }
+    .score .hs{
+      font-size: 0.34rem;
+    }
+    .score .haveScore{
+      position: relative;
+    }
+    .score .haveScore .hImg{
+      position: absolute;
+      top: 0.05rem;
+      color: #fff;
+      font-size: 0.2rem;
+      display: inline-block;
+      height: 0.38rem;
+      width: 0.38rem;
+      line-height: 0.38rem;
+      text-align: center;
+      background: url("./images/gooddetail/icon-redxin.png") no-repeat center;
+      background-size: contain;
+    }
+    .score .haveCon li{
+      margin-top: 0.43rem;
+      overflow: hidden;
+    }
+    .score .haveCon li img{
+      float: left;
+      height: 0.8rem;
+      width: 0.8rem;
+      margin-right: 0.24rem;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      border-radius:50%;
+    }
+    .score .haveCon li .userInfo{
+      float: left;
+      width: 80%;
+      border-bottom:1px solid #ddd;
+      padding-bottom: 0.47rem;
+    }
+    .score .haveCon .userInfo .haveName>div{
+      float: left;
+    }
+    .score .haveCon .userInfo .haveName .xin{
+      float: right;
+    }
+    .score .haveCon .userInfo .haveName .xin li{
+      float: left;
+      width: 0.22rem;
+      height: 0.22rem;
+      margin-right: 0.04rem;
+      margin-top: 0;
+      background:url("./images/gooddetail/icon-redxin.png") no-repeat center;
+      background-size:contain;
+    }
+    .score .haveCon .userInfo .haveName .name{
+      font-size: 0.26rem;
+      color: #666;
+    }
+    .score .haveCon .userInfo .haveTime{
+      font-size: 0.26rem;
+      color: #999;
+    }
+    .score .haveCon .userInfo .haveFont{
+      color: #606060;
+      font-size: 0.3rem;
+      padding-top: 0.22rem;
+    }
+    .score .haveCon .userInfo .haveImg li{
+      float: left;
+      width: 1.4rem;
+      height: 1.4rem;
+      background-color: #e1e1e1;
+      margin-right: 0.2rem;
+      margin-top: 0.27rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .score .haveCon .userInfo .haveImg li img{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border-radius: 0;
+    }
+    .score .haveCon .userInfo .haveRes{
+      width: 100%;
+      position: relative;
+      margin-top: 0.2rem;
+      padding: 0.1rem;
+      border: 1px solid #ddd;
+      background-color: #eee;
+      border-radius: 5px;
+      font-size: 0.24rem;
+      color: #333;
+    }
+    .score .haveCon .userInfo .haveRes:before{
+      content: "";
+      position: absolute;
+      left: .5rem;
+      top: -14px;
+      border: 6px solid transparent;
+      border-bottom: 8px solid #ccc;
+    }
+    .score .haveCon .userInfo .haveRes:after{
+      content: "";
+      position: absolute;
+      left: .5rem;
+      top: -13px;
+      border: 6px solid transparent;
+      border-bottom: 8px solid #eee;
+    }
+    .score .haveCon .userInfo .haveRes p>span{
+      float: left;
+    }
+    .score .haveCon .userInfo .haveRes .name{
+      color: #666;
+    }
+    .score .haveCon .userInfo .haveRes .time{
+      float: right;
+    }
+    .score .haveCon .userInfo .haveRes .resCon{
+      line-height: 0.4rem;
+    }
+    .score .haveScore .lookMore a{
+      float: right;
+      font-size: 0.26rem;
+      padding: 0.2rem 0;
+      margin-right: 0.3rem;
+    }
+
+
+    .maybe{
+      margin-top: 0.24rem;
+      background-color: #fff;
+      padding: 0 0.2rem;
+    }
+    .maybe .maybeTit h3{
+      padding-top: 0.48rem;
+      font-size: 0.34rem;
+      color: #606060;
+    }
+    .maybe .maybeCon{
+      padding-bottom: 0.28rem;
+    }
+    .maybe .maybeCon li{
+      float: left;
+      width: 50%;
+      margin-top: 0.48rem;
+    }
+    .maybe .maybeCon .mayImg{
+      width: 3.34rem;
+      height: 2.34rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .maybe .maybeCon .mayImg img{
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 100%;
+      min-height: 2.34rem;
+    }
+    .maybe .maybeCon .mayFont{
+      margin-top: 0.2rem;
+      font-size: 0.26rem;
+      color: #151515;
+    }
+    .maybe .maybeCon .mayFont .gn{
+      width: 3.34rem;
+      height: 0.8rem;
+      color: #999;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+
+    }
+    .maybe .maybeCon .mayFont .gp{
+      font-size: 0.32rem;
+    }
+
+    .footer{
+      position: fixed;
+      z-index: 999999;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1rem;
+      border-top:1px solid rgb(221, 221, 221);
+      background-color: #fff;
+    }
+    .footer li {
+      position: relative;
+      float: left;
+      text-align: center;
+      font-size: 0.2rem;
+      color: #666;
+    }
+    .footer li img{
+      width: 0.4rem;
+      height: 0.4rem;
+      margin-top: 0.15rem;
+    }
+    .footer li p{
+      margin-top: -3px;
+    }
+    .footer .line{
+      position: relative;
+      height: 1rem;
+    }
+    .footer .line p{
+      width: 1px;
+      height: .48rem;
+      background: #ccc;
+      position: absolute;
+      top: 50%;
+      margin-top: -0.24rem;
+    }
+    .footer .add{
+      width: 32%;
+      padding-top: 0.08rem;
+    }
+    .footer .add a{
+      font-size: .28rem;
+      display: block;
+      width: 95%;
+      height: .84rem;
+      line-height: .86rem;
+      border-radius: .1rem;
+      color: #fff;
+      box-sizing: border-box;
+      background: rgba(254,97,34,.7);
+      margin: 0 auto;
+    }
+    .footer .care a{
+      background: #f13e52;
+    }
+    .footer .hotLine{
+      width: 2.44rem;
+      background-color: #fff;
+      position: absolute;
+      left: 0.1rem;
+      bottom: 1.2rem;
+      border: 1px solid #e1e1e1;
+      border-bottom: none;
+      font-size: 0.24rem;
+    }
+    .footer .hotLine table{
+      width: 100%;
+    }
+    .footer .hotLine table tr{
+      height: 1rem;
+      border-bottom:1px solid #e1e1e1;
+    }
+    .footer .hotLine table tr td:first-child{
+      width: 40%;
+      text-align: center;
+    }
+    .footer .hotLine table tr td:first-child img{
+      width: 0.4rem;
+      height: 0.4rem;
+      margin-top: 0.1rem;
+    }
+    .footer .hotLine table:before{
+      content: "";
+      position: absolute;
+      left: .5rem;
+      bottom: -14px;
+      border: 6px solid transparent;
+      border-top: 8px solid #ccc;
+    }
+    .footer .hotLine table:after{
+      content: "";
+      position: absolute;
+      left: .5rem;
+      bottom: -13px;
+      border: 6px solid transparent;
+      border-top: 8px solid #fff;
+    }
+    .footer ul .redPoint{
+      position: absolute;
+      width: .1rem;
+      height: .1rem;
+      background: red;
+      border-radius: .05rem;
+      right: .44rem;
+      top: .07rem;
+    }
+    .footer .add .addOne{
+      display: none;
+      position: absolute;
+      right: 1rem;
+      top: .2rem;
+      width: .46rem;
+      height: .46rem;
+      font-size: .28rem;
+      text-align: center;
+      line-height: .46rem;
+      background: red;
+      color: #fff;
+      border-radius: .23rem;
+      -webkit-transform: translateY(-1rem) scale(1);
+      transform: translateY(-1rem) scale(1);
+      opacity: 1;
+    }
+    .footer .add .addAnimate{
+      animation: addAnimate 0.7s linear;
+    }
+    /*预定*/
+
+    .tg{
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      font-size: 0.28rem;
+      z-index: 9999999;
+    }
+    .tg .tgCon{
+      height: .7rem;
+      top: 0;
+      left: 0;
+      background: #ffeddb;
+      padding: 0 .24rem;
+      box-sizing: border-box;
+    }
+    .tg .tgCon .tgLeft{
+      height: .7rem;
+      width: .62rem;
+      float: left;
+      line-height: 0.8rem;
+    }
+    .tg .tgCon .tgLeft img{
+      width: 0.3rem;
+      height: 0.31rem;
+    }
+    .tg .tgCon .tgRight{
+      height: 0.7rem;
+      line-height: 0.7rem;
+      overflow: hidden;
+      color: #f37120;
+      font-size: 0.28rem;
+    }
+    .tg .tgCon .tgRight .anCon{
+      width: 3000px;
+    }
+    .tg .tgCon .tgRight .anCon .animate{
+      float: left;
+      min-width:6.5rem;
+      animation:run 15s linear 0s infinite normal;
+    }
+
+    .mask , .helpMask , .guliMask{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999999;
+    }
+    .alert{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    .alert .alertConTit{
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      height: .92rem;
+      background: #f13e52;
+      line-height: .92rem;
+      font-size: .34rem;
+      color: #fff;
+      text-align: center;
+    }
+    .alert .alertContent{
+      background-color: #fff;
+      width: 100%;
+      padding-top: 0.56rem;
+    }
+    .alert .alertContent p{
+      margin-bottom: 0.56rem;
+      padding-left: 0.44rem;
+      overflow: hidden;
+    }
+    .alert .alertContent p i{
+      display: inline-block;
+      width: 0.22rem;
+      height: 0.19rem;
+      background: url("./images/gooddetail/icon-redxin.png") no-repeat center;
+      background-size: contain;
+      float: left;
+      margin-top: 0.1rem;
+    }
+    .alert .alertContent p span{
+      font-size: 0.28rem;
+      color: rgb(96, 96, 96);
+      padding-left: 0.14rem;
+      width: 90%;
+      float: left;
+    }
+    .alert .alertContent .btn{
+      padding-bottom: 0.56rem;
+      text-align: center;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    .alert .alertContent .btn a{
+      display: inline-block;
+      width: 3.2rem;
+      height: .64rem;
+      line-height: .64rem;
+      border: .02rem solid #f13e52;
+      border-radius: .12rem;
+      font-size: .28rem;
+      color: #f13e52;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .shopCon{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+    }
+    .shopCon .shopPrice{
+      padding-bottom: 0.2rem;
+    }
+    .shopCon .shopPrice>div{
+      float: left;
+    }
+    .shopCon .shopPrice .si img{
+      position: relative;
+      margin-left: 0.2rem;
+      margin-top: -0.5rem;
+      width: 2.7rem;
+      height: 1.86rem;
+    }
+    .shopCon .shopPrice .sp{
+      margin-left: 0.2rem;
+      line-height: 0.4rem;
+      font-size: 0.28rem;
+      padding-top: 0.24rem;
+    }
+    .shopCon .shopPrice .sp .red{
+      color: rgb(241, 62, 82);
+    }
+    .shopCon .shopPrice .close{
+      margin-top: 0.2rem;
+      margin-right: 0.1rem;
+      font-size: 0.5rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      float: right;
+      text-align: center;
+    }
+    .shopCon .shopGuige{
+      padding: 0 0.2rem;
+    }
+    .shopCon .shopGuige .gg{
+      padding: 0.3rem 0;
+      border-top:1px solid #ccc;
+    }
+    .shopCon .shopGuige .ggg{
+      padding: 0 0.2rem;
+    }
+    .shopCon .shopGuige .ggg ul{
+      height: 3rem;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+    .shopCon .shopGuige .ggg li{
+      float: left;
+      line-height: .32rem;
+      font-size: .26rem;
+      padding: .1rem .24rem;
+      background: #e1e1e1;
+      color: #666;
+      border-radius: .06rem;
+      margin: 0 .24rem .2rem;
+      max-width: 85%;
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .shopCon .shopGuige .ggg .sel{
+      background: #f13e52;
+      color: #fff;
+    }
+    .shopCon .shopNum{
+      border-top: 1px solid #ccc;
+      left: 0;
+      bottom: 1rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      width: 100%;
+    }
+    .shopCon .shopNum>div{
+      float: left;
+    }
+    .shopCon .shopNum .buy{
+      padding-left: 0.2rem;
+      font-size: 0.3rem;
+    }
+    .shopCon .shopNum .form{
+      float: right;
+      margin-right: 0.3rem;
+    }
+    .shopCon .shopNum .form span{
+      display: inline-block;
+      /*position: relative;*/
+      margin-top: .35rem;
+      width: .6rem;
+      height: .6rem;
+      border: 1px solid #ddd;
+      line-height: 0.6rem;
+      text-align: center;
+      font-size: 0.4rem;
+      /*font-weight: 600;*/
+      color: #ddd;
+    }
+    .shopCon .shopNum .form input{
+      text-align: center;
+      width: 1rem;
+      height: .6rem;
+      border: 1px solid #ddd;
+      margin: .3rem;
+      font-size: 0.28rem;
+      color: #666;
+    }
+    .shopCon .sure input{
+      width: 100%;
+      height: 1rem;
+      line-height: 1rem;
+      background: rgb(241, 62, 82);
+      text-align: center;
+      color: #fff;
+      font-size: 0.3rem;
+      border:none;
+    }
+
+    .guliMask .cen{
+      background: rgb(255, 255, 255);
+      border-radius: 0.08rem;
+      padding: 0.2rem;
+      width: 6rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      font-size: 0.26rem;
+      line-height: 0.42rem;
+      text-align: center;
+    }
+    @keyframes run {
+      from{
+        -webkit-transform: translateX(6.5rem);
+        -moz-transform: translateX(6.5rem);
+        -ms-transform: translateX(6.5rem);
+        -o-transform: translateX(6.5rem);
+        transform: translateX(6.5rem);
+      }
+      to{
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes addAnimate {
+      0%{
+        -webkit-transform: translateY(0rem) scale(0);
+        transform: translateY(0rem) scale(0);
+        opacity: 0;
+      }
+      50%{
+        -webkit-transform: translateY(-1rem) scale(1);
+        transform: translateY(-1rem) scale(1);
+        opacity: 1;
+      }
+      70%{
+        -webkit-transform: translateY(-1rem) scale(1);
+        transform: translateY(-1rem) scale(1);
+        opacity: 1;
+      }
+      100%{
+        -webkit-transform: translateY(-1rem) scale(0);
+        transform: translate(-1.7rem,0rem) scale(0);
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <!--header start-->
+    <div class="header">
+        <!--goodsImg-->
+        <div class="headImg">
+          <img src="./images/gooddetail/bg.png" alt="商品图片">
+          <div class="headImgInfo">
+            <span class="poor">贫困户加工</span>
+            <span class="scene">现场采集</span>
+          </div>
+        </div>
+        <!--goodsTitle-->
+        <div class="headImgTit">
+          <div>
+            <h2>测试标题测试标题测试标题测试标题测试标题测试标题</h2>
+            <p>当地物流不及城市发达，产品到您手中可能会需要5～10天，请多多理解。点滴帮扶汇集仁心，积少成多服务三农。</p>
+          </div>
+        </div>
+      </div>
+    <!--header end-->
+
+    <!--price start-->
+    <div class="goodPrice cle">
+      <div>
+        <div class="price">
+          ￥
+          <span>10.00</span>
+        </div>
+        <span class="priceLine"></span>
+        <!--三个标签-->
+        <div class="priceInfo first" style="display: none;">
+          <div class="pricePoor">
+            <p>10.00元</p>
+            <p>100分</p>
+            <p>0.45元</p>
+          </div>
+          <div class="priceJf">
+            <p>帮扶贫困户</p>
+            <p>公益积分送给您</p>
+            <p>公益积分送给您</p>
+          </div>
+        </div>
+        <!--两个标签-->
+        <div class="priceInfo sec">
+          <div class="pricePoor">
+            <p>10.00元</p>
+            <p>100分</p>
+          </div>
+          <div class="priceJf">
+            <p>帮扶贫困户</p>
+            <p>公益积分送给您</p>
+          </div>
+        </div>
+        <i class="tip"></i>
+      </div>
+    </div>
+    <!--price end-->
+
+    <!--help start-->
+    <div class="help">
+      <div class="cle">
+        <ul>
+          <li>
+            <div>
+              <img src="./images/gooddetail/icon-help.png" alt="帮扶">
+            </div>
+            <p>0人帮扶</p>
+          </li>
+          <li>
+           <div>
+             <img src="./images/gooddetail/icon-guli.png" alt="鼓励">
+           </div>
+            <p>鼓励Ta</p>
+          </li>
+          <li>
+            <div>
+              <img src="./images/gooddetail/icon-chuanbo.png" alt="帮扶">
+            </div>
+            <p>帮传播</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--help end-->
+
+    <!--配送 start-->
+    <div class="ps">
+      <div class="gg">
+        <ul class="cle">
+          <li>
+            <p>可选规格：</p>
+          </li>
+          <li>
+            <p>每箱5Kg 70~85</p>
+            <p>每瓶375ml(毫升)</p>
+            <p>每箱2500g</p>
+          </li>
+          <li>
+            <p><span class="red">￥9,999.00</span>/箱</p>
+            <p><span class="red">￥68.00</span>/瓶</p>
+            <p><span class="red">已售光</span></p>
+          </li>
+        </ul>
+      </div>
+      <div class="free cle">
+        <span>配&emsp;&emsp;送：免运费</span>
+        <span>2017-07-31后发货</span>
+        <p>不支持安徽省，内蒙古自治区，西藏自治区的用户购买</p>
+      </div>
+      <div class="rz cle">
+        <p>产品认证</p>
+        <ul class="cle">
+          <li>
+            <div>
+              <i class="dg"></i>
+              <span>有机认证</span>
+              <i class="bc"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <i class="dg"></i>
+              <span>绿色认证</span>
+              <i class="bc"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <i class="dg"></i>
+              <span>欧盟认证</span>
+              <i class="bc"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <i class="dg"></i>
+              <span>无公害认证</span>
+              <i class="bc"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--配送 end-->
+
+    <!--helpTips start-->
+    <div class="helpTips">
+      <div class="helpTipCon">
+        <div class="helpTipConTit cle">
+          <div class="tipLeft"></div>
+          <div class="tipTit">帮扶小贴士</div>
+          <div class="tipRight"></div>
+        </div>
+        <div class="helpCon">
+          <div>
+            <h3>爱心产品的质量有保障么？</h3>
+            <div class="ans">
+              公益中国在贫困地区建立了专门的运营中心，对每批产品进行抽检审核，并且提供仓储、包装、物流等服务，以确保这些产品可以顺利送达您的手中。
+              <br>
+              我们的助理人或贫困户虽然不是专业的电商卖家，但他们一直在努力去提升服务质量，您的每一次帮扶都是他们前进的信心。
+            </div>
+          </div>
+          <div>
+            <h3>您的爱心购买是如何帮扶到贫困地区的？</h3>
+            <div class="ans">
+              购买产品可以直接提高贫困户的收入，更重要的是会带动当地基础环境、设施、人才、理念的提高，为贫困地区的经济发展打下基础，为他们长效脱贫打下基础.
+              <br>
+              平台运行以来已经协助多个贫困县建立了运营中心，当地电商的基础环境，物流环境都得到了极大的改善。
+            </div>
+          </div>
+          <div class="callP cle">
+            <p>您在帮扶中若遇到问题，可拨打热线：</p>
+            <a href="#"><i></i>400 666 7308</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--helpTips end-->
+
+    <!--helper start-->
+    <div class="helper">
+      <div class="helperCon">
+        <h2>本产品由助理人发货&售后</h2>
+        <div class="helperName cle">
+          <div class="nameLeft">
+            <span>助理人：徐亚男</span>
+            <span class="from">来自旬邑县</span>
+          </div>
+          <div class="nameRight">
+            <a href="#">详情</a>
+          </div>
+        </div>
+        <div class="helperInfo">
+          <ul class="cle">
+            <li>
+              <p>2个</p>
+              <p>爱心产品</p>
+            </li>
+            <li>
+              <p>13小时</p>
+              <p>发货速度</p>
+            </li>
+            <li>
+              <p>76.47%</p>
+              <p>退款率 <span class="red">一般</span></p>
+            </li>
+            <li>
+              <p>17.65%</p>
+              <p>投诉率 <span class="green">良好</span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="helperMsg">
+          <p>贫困户的产品在标准化上会有一些欠缺，可能表现在规格不一、包装简陋、发货较慢、售后沟通困难等，但每份产品都代表了他们为脱贫而付出的努力，您的支持和包容将是他们前进的动力。</p>
+        </div>
+      </div>
+    </div>
+    <!--helper end-->
+
+    <!--goodsInfo start-->
+    <div class="goodsInfo">
+      <div class="goodsTit">
+        <h3>产品详情：</h3>
+      </div>
+      <pre>
+1.清理过滤网
+空调使用时间久了，在防尘罩和出风口过滤网，会有很多灰尘和细菌，不及时清理会产生很多霉菌，和灰尘，这样就会影响空调的制冷效果。同样的耗电量也会更大。可以将空调里面的过滤网取下来进行清洗除菌，然后擦干晾干重新装上即可，但是要要避免在剧烈的阳光下晾晒，以免损坏过滤网。
+2.清理散热片
+一般长期没怎么使用的空调上面都会有很多的灰层，可以先用布简单的将表面的灰层擦掉，再用空调清洁剂进行处理，来回的抹到散热片的铝制传热片上和线圈表面上，不仅可以更加彻底的去污除菌，还能延长空调的使用寿命。
+      </pre>
+      <div class="goodsImg">
+        <ul>
+          <li>
+            <img src="./images/gooddetail/bg.png" alt="商品图片">
+          </li>
+          <li>
+            <img src="./images/gooddetail/bg.png" alt="商品图片">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--goodsInfo end-->
+
+    <!--score start-->
+    <div class="score">
+      <div class="noScore" style="display: none;">
+        <span class="hs">帮扶人评分：</span>
+        <span class="noPop">还没有帮扶人发表评价</span>
+      </div>
+      <div class="haveScore">
+        <div class="haveTit">
+          <span class="hs">帮扶人评分：</span>
+          <span class="hImg">4.7</span>
+        </div>
+        <div class="haveCon">
+          <ul>
+            <li>
+              <img src="./images/gooddetail/icon-user.png" alt="用户头像">
+              <div class="userInfo">
+                <div class="haveName cle">
+                  <div class="name">李**</div>
+                  <div class="xin">
+                    <ul class="cle">
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="haveTime">
+                  <span>2017-05-27</span>
+                  <span>产品规格：</span>
+                  <span>每箱2斤 30mm</span>
+                </div>
+                <div class="haveFont">还可以吧，包装简陋了一点，不过农民伯伯做点东西也不容易，希望可以帮到他。</div>
+                <div class="haveImg">
+                  <ul class="cle">
+                    <li>
+                      <img src="./images/gooddetail/bg.png" alt="">
+                    </li>
+                    <li>
+                      <img src="./images/gooddetail/bg.png" alt="">
+                    </li>
+                    <li>
+                      <img src="./images/gooddetail/bg.png" alt="">
+                    </li>
+                  </ul>
+                </div>
+                <div class="haveRes">
+                  <div class="res">
+                    <p class="cle">
+                      <span class="name">李欣：</span>
+                      <span class="time">2017-08-08</span>
+                    </p>
+                    <p class="resCon">您的满意是我们最大的动力，您的满意是我们最大的动力您的满意是我们最大的动力您的满意是我们最大的动力您的满意是我们最大的动力</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src="./images/gooddetail/icon-user.png" alt="用户头像">
+              <div class="userInfo">
+                <div class="haveName cle">
+                  <div class="name">李**</div>
+                  <div class="xin">
+                    <ul class="cle">
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="haveTime">
+                  <span>2017-05-27</span>
+                  <span>产品规格：</span>
+                  <span>每箱2斤 30mm</span>
+                </div>
+                <div class="haveFont">还可以吧，包装简陋了一点，不过农民伯伯做点东西也不容易，希望可以帮到他。</div>
+                <div class="haveImg">
+                  <ul class="cle">
+                    <li>
+                      <img src="./images/gooddetail/bg.png" alt="">
+                    </li>
+                    <li>
+                      <img src="./images/gooddetail/bg.png" alt="">
+                    </li>
+                    <li>
+                      <img src="./images/gooddetail/bg.png" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="lookMore cle">
+          <a href="#">全部5条评价></a>
+        </div>
+      </div>
+    </div>
+    <!--score end-->
+
+    <!--maybe start-->
+    <div class="maybe">
+      <div class="maybeTit">
+        <h3>您可能还在找：</h3>
+      </div>
+      <div class="maybeCon">
+        <ul class="cle">
+          <a href="#">
+            <li>
+              <div class="mayImg">
+                <img src="./images/gooddetail/bg.png" alt="">
+              </div>
+              <div class="mayFont">
+                <p class="gn">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p>￥ <span class="gp">59.90</span></p>
+              </div>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div class="mayImg">
+                <img src="./images/gooddetail/bg.png" alt="">
+              </div>
+              <div class="mayFont">
+                <p class="gn">商品名称</p>
+                <p>￥ <span class="gp">59.90</span></p>
+              </div>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div class="mayImg">
+                <img src="./images/gooddetail/bg.png" alt="">
+              </div>
+              <div class="mayFont">
+                <p class="gn">商品名称</p>
+                <p>￥ <span class="gp">59.90</span></p>
+              </div>
+            </li>
+          </a>
+          <a href="#">
+            <li>
+              <div class="mayImg">
+                <img src="./images/gooddetail/bg.png" alt="">
+              </div>
+              <div class="mayFont">
+                <p class="gn">商品名称</p>
+                <p>￥ <span class="gp">59.90</span></p>
+              </div>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <!--maybe end-->
+
+    <!--footer start-->
+    <div class="footer" style="display: none;">
+      <div class="foot">
+        <ul class="cle">
+          <li style="width: 18%;">
+            <img src="./images/gooddetail/icon-now.png" alt="">
+            <p>咨询</p>
+          </li>
+          <li class="line"><p></p></li>
+          <li style="width: 18%;">
+            <img src="./images/gooddetail/icon-shop.png" alt="">
+            <p>心愿单</p>
+            <span class="redPoint"></span>
+          </li>
+          <li class="add">
+            <a href="#">加入心愿单</a>
+            <span class="addOne addAnimate">+1</span>
+          </li>
+          <li class="add care">
+            <a href="#">立即帮扶</a>
+          </li>
+        </ul>
+      </div>
+      <div class="hotLine">
+        <!--<ul>-->
+          <!--<li>-->
+            <!--<img src="./images/gooddetail/icon-now.png" alt="">-->
+          <!--</li>-->
+        <!--</ul>-->
+        <table>
+          <tr>
+            <td>
+              <img src="./images/gooddetail/icon-now.png" alt="">
+            </td>
+            <td>在线咨询</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="./images/gooddetail/phone2.png" alt="">
+            </td>
+            <td>在线咨询</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="./images/gooddetail/qq2.png" alt="">
+            </td>
+            <td>在线咨询</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+    <!--footer end-->
+    <!--预约 start-->
+    <div class="footer footerYy">
+      <div class="foot">
+        <ul class="cle">
+          <li style="width: 18%;">
+            <img src="./images/gooddetail/icon-now.png" alt="">
+            <p>咨询</p>
+          </li>
+          <li class="add care" style="width: 82%;">
+            <a href="#">立即预定</a>
+          </li>
+        </ul>
+      </div>
+      <div class="hotLine">
+        <!--<ul>-->
+        <!--<li>-->
+        <!--<img src="./images/gooddetail/icon-now.png" alt="">-->
+        <!--</li>-->
+        <!--</ul>-->
+        <table>
+          <tr>
+            <td>
+              <img src="./images/gooddetail/icon-now.png" alt="">
+            </td>
+            <td>在线咨询</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="./images/gooddetail/phone2.png" alt="">
+            </td>
+            <td>在线咨询</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="./images/gooddetail/qq2.png" alt="">
+            </td>
+            <td>在线咨询</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+    <!--预约 end-->
+
+    <!--通告 start-->
+    <div class="tg">
+      <div class="tgCon cle">
+        <div class="tgLeft">
+          <img src="./images/gooddetail/detail-inform.png" alt="">
+        </div>
+        <div class="tgRight">
+          <div class="anCon">
+            <div class="animate">
+                本产品为预售产品，故需延迟至2017-07-31后发货
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--通告 end-->
+
+    <!--帮传播弹层 start-->
+    <div class="mask" style="background: rgba(0, 0, 0, 0.4);">
+      <div class="alert">
+        <div class="alertCon">
+          <div class="alertConTit">分享给好友</div>
+          <div class="alertContent">
+           <p>
+             <i></i>
+             <span>好友注册成功，您可获得50积分</span>
+           </p>
+            <p>
+              <i></i>
+              <span>好友进行了爱心帮扶，您再获得5%的积分</span>
+            </p>
+            <p class="btn"><a href="#">分享</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--帮传播弹层 end-->
+
+    <!--立即帮扶弹层 start-->
+    <div class="helpMask" style="background: rgba(99, 99, 99, 0.4);display: none;">
+        <div class="shopCon">
+          <div class="shopPrice cle">
+            <div class="si"><img src="./images/gooddetail/bg.png" alt=""></div>
+            <div class="sp">
+              <p class="red">￥25.00</p>
+              <p>库存123</p>
+            </div>
+            <div class="close">×</div>
+          </div>
+          <div class="shopGuige">
+            <div class="gg">产品规格</div>
+            <div class="ggg">
+              <ul class="cle">
+                <li class="sel">1818</li>
+                <li>1818</li>
+              </ul>
+            </div>
+          </div>
+          <div class="shopNum cle">
+            <div class="buy">购买数量</div>
+            <div class="form">
+              <span>-</span>
+              <input type="text" value="1">
+              <span>+</span>
+            </div>
+          </div>
+          <div class="sure">
+            <input type="submit" value="确&emsp;定">
+          </div>
+        </div>
+    </div>
+    <!--立即帮扶弹层 end-->
+
+    <!--爱心分配说明 start-->
+    <div class="mask loveMask" style="background: rgba(0, 0, 0, 0.4);display: none;">
+      <div class="alert">
+        <div class="alertCon">
+          <div class="alertConTit">爱心分配说明</div>
+          <div class="alertContent">
+            <p>
+              <i></i>
+              <span>该产品为贫困户自产/代销；</span>
+            </p>
+            <p>
+              <i></i>
+              <span>您支付过程中，根据支付方式的不同，第三方支付渠道会收取成交金额的0.6%作为服务费；</span>
+            </p>
+            <p>
+              <i></i>
+              <span>贫困户获得成交金额的其余全部作为成本及利润。</span>
+            </p>
+            <p class="btn"><a href="#">分享</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--爱心分配说明 end-->
+
+    <!--鼓励 start-->
+    <div class="guliMask">
+      <div class="cen">鼓励已收到，我们会努力做得更好</div>
+    </div>
+    <!--鼓励 end-->
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,680 @@
+/*index*/
+/*wrapper start*/
+.wrapper {
+  background-color: #f4f5f6;
+}
+
+/*header start*/
+.header {
+  width: 100%;
+  height: 4rem;
+}
+
+.header img {
+  width: 100%;
+  height: 4rem;
+}
+
+.header .hea {
+  width: 100%;
+  height: 0.83rem;
+  position: absolute;
+  top: 0.67rem;
+}
+
+.header .header-search {
+  position: relative;
+  width: 8rem;
+  height: 0.83rem;
+  margin-left: 0.67rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.header .header-search input {
+  border: none;
+  height: 100%;
+  background: transparent;
+  margin-left: 1rem;
+}
+
+.header .header-search .hea-ser {
+  width: 0.387rem;
+  height: 0.381rem;
+  background: url("../images/icon-ser.png") no-repeat left bottom;
+  background-size: cover;
+  /*margin-left: 0.31rem;*/
+  /*vertical-align: middle;*/
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translate(-50%,-50%);
+}
+
+.header .hea-add {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.25rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: url(../images/icon-ser.png) no-repeat top center;
+  background-size: cover;
+}
+
+/*ask start*/
+.ask {
+  width: 100%;
+  height: 1.08rem;
+  background-color: #fff;
+}
+
+.ask .ask-con {
+  position: relative;
+  width: 100%;
+  line-height: 1.08rem;
+  overflow: hidden;
+}
+
+.ask .ask-con .askImg {
+  margin: 0 0.34rem;
+  width: 1.88rem;
+  height: 0.36rem;
+  background: url("../images/icon-ask.PNG") no-repeat center;
+  background-size: contain;
+}
+
+.ask .ask-con .askLine {
+  display: inline-block;
+  width: 1px;
+  height: 0.36rem;
+  border-left: 1px solid #666;
+}
+
+.ask .ask-con a {
+  font-size: 0.35rem;
+}
+
+.ask .ask-con .askCon {
+  position: absolute;
+  bottom: 0.06rem;
+  padding-left: 0.24rem;
+}
+
+.ask .askArrow {
+  float: right;
+  margin-right: 0.347rem;
+  margin-top: 0.37rem;
+  width: 0.36rem;
+  height: 0.36rem;
+  background: url("../images/icon-arrow.png") no-repeat center;
+  /*background-size: contain;*/
+}
+
+/*ask end*/
+
+/*ranking start*/
+.ranking {
+  position: relative;
+  width: 100%;
+  /*height: 2.88rem;*/
+  padding: 0.55rem 0.67rem;
+  margin-top: 0.27rem;
+  background-color: #fff;
+}
+
+.ranking .rank-top {
+  /*display: -webkit-box; !* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. *!*/
+  /*display: -moz-box; !* 老版本语法: Firefox (buggy) *!*/
+  /*display: -ms-flexbox; !* 混合版本语法: IE 10 *!*/
+  /*display: -webkit-flex; !* 新版本语法: Chrome 21+ *!*/
+  /*display: flex; !* 新版本语法: Opera 12.1, Firefox 22+ *!*/
+  /*justify-content: space-around;*/
+  overflow: hidden;
+}
+.ranking .rank-top .rank{
+  float: left;
+}
+.ranking .rank-top .rankTwo{
+  margin-left: 0.67rem;
+}
+.ranking .rank-top h2 {
+  font-size: 0.34rem;
+  /*font-weight: 600;*/
+}
+
+.ranking .rank-top .rankNum {
+  padding: 0.4rem 0;
+  border-right: 1px solid #e1e1e1;
+}
+
+.ranking .rank-top .rankNum .red {
+  font-size: 0.53rem;
+  color: #f31e37;
+  /*font-weight: 600;*/
+  font-style: italic;
+}
+
+.ranking .rank-top .rankNum .bnum {
+  font-size: 0.37rem;
+  color: #000;
+  font-style: italic;
+}
+
+.ranking .rank-top .rankLeft {
+  padding-right: 1.5rem;
+}
+
+.ranking .rank-top .rankRight {
+  border: none
+}
+
+.ranking .rank-top a{
+  position: absolute;
+  top: 50%;
+  right: 0.347rem;
+  transform: translateY(-50%);
+  float: right;
+  display: inline-block;
+  width: 0.36rem;
+  height: 0.36rem;
+  background: url("../images/icon-arrow.png") no-repeat center;
+}
+/*.ranking .rank-top .rankRight a{*/
+  /*font-size: 20px;*/
+  /*float: right;*/
+/*}*/
+.ranking .rankNo span {
+  font-size: 0.32rem;
+  color: #999;
+}
+
+/*ranking end*/
+
+/*newLaba start*/
+.newLaba {
+  width: 100%;
+  height: 1.17rem;
+  line-height: 1.17rem;
+  padding-left: 0.67rem;
+  background-color: #fff;
+  border-top: 1px solid #f4f5f6;
+}
+
+.newLaba .laba {
+  width: 0.51rem;
+  height: 0.43rem;
+  background: url("../images/icon-laba.png") no-repeat center;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.newLaba span {
+  padding-left: 0.413rem;
+  color: #666;
+}
+
+/*news end*/
+
+/*love start*/
+.love {
+  margin-top: 0.27rem;
+}
+
+.loveBanner {
+  width: 100%;
+  height: 1.87rem;
+}
+
+.loveBanner img {
+  width: 100%;
+  height: 1.87rem;
+}
+
+/*collection*/
+.collection {
+  display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box; /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox; /* 混合版本语法: IE 10 */
+  display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+  display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+  justify-content: space-between;
+  padding: 0.467rem 0;
+  padding-left: 0.316rem;
+  background-color: #fff;
+}
+
+.collectionLeft {
+  flex: 1;
+  border-right: 1px solid #e1e1e1;
+}
+
+.collection h1 {
+  font-size: 0.4rem;
+  /*font-weight: 600;*/
+  margin-top: 0.133rem;
+}
+
+.collection p {
+  font-size: 0.3rem;
+  color: #999;
+  padding-top: 0.2rem;
+  padding-bottom: 0.67rem;
+}
+
+.collectionLeft .guolan {
+  text-align: center;
+}
+
+.collectionLeft img {
+  width: 3.27rem;
+  height: 2.2rem;
+}
+
+.collectionRight {
+  flex: 1;
+}
+
+.collectionRight .colRight {
+  display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box; /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox; /* 混合版本语法: IE 10 */
+  display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+  display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+  justify-content: space-between;
+}
+
+.collectionRight .colTitle {
+  margin-left: 0.33rem;
+  margin-right: 0.4rem;
+}
+
+.collectionRight .colImg {
+  width: 1.3rem;
+  height: 1.78rem;
+  margin-right: 0.506rem;
+  background: url("../images/apple.png") no-repeat center;
+  background-size: contain;
+}
+
+.collectionRight .colImg.colImgxin {
+  width: 1.48rem;
+  height: 1.4rem;
+  margin-top: 0.5rem;
+  background: url("../images/xin.png") no-repeat center;
+  background-size: contain;
+}
+
+
+/*help*/
+.help {
+  margin-top: 0.27rem;
+  background-color: #fff;
+}
+
+.help .helpHead {
+  margin: 0 auto;
+  width: 5.16rem;
+  overflow: hidden;
+}
+
+.help .helpHead > div {
+  height: 0.94rem;
+  line-height: 0.94rem;
+  float: left;
+}
+
+.head-left {
+  width: 0.94rem;
+  background: url("../images/title_l.png") no-repeat center;
+  background-size: contain;
+}
+
+.head-tit {
+  width: 3.28rem;
+  font-size: 0.4rem;
+  color: #f31e37;
+  text-align: center;
+  /*font-weight: 600;*/
+}
+
+.head-right {
+  width: 0.94rem;
+  background: url("../images/title_r.png") no-repeat center;
+  background-size: contain;
+}
+
+.helpCon {
+  margin-top: 0.3rem;
+}
+
+.helpCon ul {
+  overflow: hidden;
+}
+
+.helpCon li {
+  float: left;
+  width: 50%;
+  padding: 0 0.347rem;
+  margin: 0.53em 0;
+  box-sizing: border-box;
+}
+
+.helpConModle {
+  display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box; /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox; /* 混合版本语法: IE 10 */
+  display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+  display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+}
+
+.helpConModle .helpPrice {
+  flex: 1;
+  width: 1.90rem;
+  margin-right: 0.3rem;
+}
+
+.helpConModle .helpPrice .tit {
+  font-size: 0.32rem;
+  color: #333;
+  /*font-weight: 600;*/
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 0.5rem;
+}
+
+.helpConModle .helpImg {
+  flex: 1;
+  width: 2.19rem;
+  height: 1.52rem;
+  background: url("../images/icon-mogu.jpg") no-repeat center;
+  background-size: contain;
+}
+
+.helpConModle .price {
+  font-size: 0.4rem;
+  color: #f31e37;
+  /*font-weight: 600;*/
+}
+
+/*myHelp*/
+.myHelp {
+  margin-top: 0.27rem;
+  background-color: #fff;
+}
+
+.myHelp .helpHead {
+  margin: 0 auto;
+  width: 5.16rem;
+  overflow: hidden;
+}
+
+.myHelp .helpHead > div {
+  height: 0.94rem;
+  line-height: 0.94rem;
+  float: left;
+}
+
+.myHelp .myHelpCon {
+  /*margin-top: 0.8rem;*/
+  margin-bottom: 0.4rem;
+  padding: 0 0.53rem;
+}
+
+.myHelp .myHelpCon ul {
+  overflow: hidden;
+}
+
+.myHelp .myHelpCon li {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.367rem;
+  margin-top: 0.8rem;
+}
+
+.myHelp .myHelpCon li img {
+  width: 1.6rem;
+  height: 1.6rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #efefef;
+}
+
+.myHelp .myHelpCon li div {
+  position: relative;
+  width: 1.6rem;
+  height: 1.6rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #efefef;
+}
+
+.myHelp .myHelpCon li div p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+
+/*未关注贫困户*/
+.myHelp .noHelp {
+  margin-top: 0.2rem;
+  text-align: center;
+}
+.myHelp .noHelp p{
+  font-size: 0.32rem;
+  color: #999;
+}
+.myHelp .noHelp button{
+  border: 1px solid #f31e37;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  color: #f31e37;
+  background-color: #fff;
+  padding: 0.15rem 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+/*support*/
+.support {
+  margin-top: 0.27rem;
+  background-color: #fff;
+}
+
+.support .apple {
+  /*margin: 0 auto;*/
+  width: 3.87rem;
+  height: 2.71rem;
+  background: url("../images/icon-apple.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.support .helpHead {
+  margin: 0 auto;
+  width: 5.16rem;
+  overflow: hidden;
+}
+
+.support .helpHead > div {
+  height: 0.94rem;
+  line-height: 0.94rem;
+  float: left;
+}
+
+.support .apple-tit {
+  padding: 0.4rem 0;
+  font-size: 0.32rem;
+  color: #333;
+  /*font-weight: 600;*/
+  padding-bottom: 0;
+}
+
+.support .red {
+  font-size: 0.373rem;
+  color: #f31e37;
+  /*font-weight: 600;*/
+  padding-bottom: 0;
+}
+
+.support .collection {
+  padding-bottom: 0;
+}
+
+.support .collection .collectionLeft {
+  border: none;
+}
+
+.support .collection .helpConModle {
+  margin-right: 0.33rem;
+}
+
+/*nuisanceless*/
+.nuisanceless{
+  margin-top: 0.27rem;
+  background-color: #fff;
+}
+.nuisanceless .helpHead {
+  margin: 0 auto;
+  width: 5.16rem;
+  overflow: hidden;
+}
+
+.nuisanceless .helpHead > div {
+  height: 0.94rem;
+  line-height: 0.94rem;
+  float: left;
+}
+.nuisanceless .nuisanceCon{
+  margin-top: 0.8rem;
+  padding-bottom:0.4rem;
+  overflow: hidden;
+}
+
+.nuisanceCon ul{
+  width: 30000px;
+  overflow: hidden;
+}
+.nuisanceCon ul li{
+  float: left;
+  margin-left: 0.316rem;
+}
+.nuisanceCon ul li .nuisImg{
+  width: 3.88rem;
+  height: 2.71rem;
+}
+.nuisanceCon .nuisImg img{
+  height: 100%;
+  width: 100%;
+}
+.nuisanceCon .nuis{
+  width: 3.1rem;
+  margin: 0 auto;
+}
+.nuisanceCon .nuis .nuisFont{
+  width: 100%;
+  line-height: 0.85rem;
+  text-align: center;
+  font-size: 0.32rem;
+  color: #333;
+  /*font-weight: 600;*/
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+.nuisanceCon .nuis .red{
+  font-size: 0.373rem;
+  color: #f31e37;
+  /*font-weight: 600;*/
+}
+.nuisanceCon .nuisAdd{
+  width: 3.88rem;
+  height: 2.71rem;
+  border: 1px solid #e9e9e9;
+  position: relative;
+}
+.nuisanceCon .nuisAdd a{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 0.347rem;
+  color: #666;
+}
+/*Specialty*/
+.specialty {
+  margin-top: 0.27rem;
+  background-color: #fff;
+}
+
+.specialty .helpHead {
+  margin: 0 auto;
+  width: 5.16rem;
+  overflow: hidden;
+}
+
+.specialty .helpHead > div {
+  height: 0.94rem;
+  line-height: 0.94rem;
+  float: left;
+}
+
+.specialty .specialtyCon {
+  padding: 0 0.227rem;
+  box-sizing: border-box;
+  margin-top: 0.8rem;
+  padding-bottom: 0.13rem;
+}
+
+.specialty .specialtyCon ul {
+  overflow: hidden;
+
+}
+
+.specialty .specialtyCon ul li {
+  float: left;
+  width: 25%;
+}
+.specialty .specialtyCon>div{
+  margin-bottom: 0.27rem;
+}
+.specialty .specialtyCon img {
+  width: 2.187rem;
+  height: 1.52rem;
+}
+
+.specialty .specialtyCon a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.specialty .specialtyCon a p{
+  position: absolute;
+  font-size: 0.64rem;
+  text-align: center;
+  color: #fff;
+}
+/*vanguard*/
+.vanguard .myHelpCon li img {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+/*good*/
+.myHelp .fen {
+  color: #666;
+}
+
+
+/**/

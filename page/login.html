@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <script src="./js/index.js"></script>
+  <title>登录注册</title>
+  <link rel="stylesheet" href="./styles/base.css">
+  <style>
+    html{
+      width: 100%;
+      height: 100%;
+      background: url("images/login/zh231.jpg") no-repeat center;
+    }
+    .contianer {
+      max-width:1024px;
+      margin: 0 auto;
+    }
+    .logo{
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0.8rem auto 1rem;
+      border-radius: 0.3rem;
+      box-shadow: 0 2px 2px rgba(188,188,188,.25);
+    }
+    .logo img{
+      width: 100%;
+      height: 100%;
+    }
+    .loginInfo{
+      padding: 0 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+    .loginInfo .tel{
+      font-size: .3rem;
+    }
+    .tel .telIcon{
+      width: 0.33rem;
+      margin-right: .24rem;
+      height: .72rem;
+      float: left;
+      line-height: .72rem;
+      background: url("images/login/zh229.png") no-repeat center;
+      -webkit-background-size: 0.33rem 0.44rem;
+      background-size: 0.33rem 0.44rem;
+    }
+    .tel .telNum{
+      width: 5.1rem;
+      height: .72rem;
+      float: left;
+      line-height: .72rem;
+      text-align: right;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+      padding-top: .1rem;
+    }
+    .tel .telNum input{
+      float: left;
+      width: 5.1rem;
+      height: .52rem;
+      line-height: .52rem;
+      font-size: .3rem;
+      background: 0;
+      border:none;
+    }
+    .tel .yz input{
+      width: 3.5rem;
+    }
+    .tel .yz span{
+      display: inline-block;
+      width: 1.6rem;
+      height: .52rem;
+      line-height: .52rem;
+      text-align: right;
+      color: #406fbd;
+      float: right;
+    }
+    .tel .yzIcon{
+      background: url("images/login/zh230.png") no-repeat center;
+      -webkit-background-size: 0.33rem 0.44rem;
+      background-size: 0.33rem 0.44rem;
+    }
+    .btn{
+      width: 6rem;
+      height: .88rem;
+      line-height: .88rem;
+      text-align: center;
+      color: #fff;
+      background: #f31e37;
+      border-radius: .44rem;
+      margin: .8rem auto .4rem;
+      box-shadow: 0 0.1rem 0.16rem rgba(182,0,42,.25);
+      font-size: 0.3rem;
+    }
+    .reg{
+      text-align: center;
+      font-size: 0.24rem;
+    }
+    .reg a{
+      color: #2854ad;
+    }
+  </style>
+</head>
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <div class="logo">
+      <img src="images/login/icon-logo.png" alt="logo">
+    </div>
+    <div class="loginInfo">
+      <div class="tel cle">
+        <div class="telIcon"></div>
+        <div class="telNum">
+          <input type="text" placeholder="请输入您的手机号码">
+        </div>
+      </div>
+    </div>
+    <div class="loginInfo">
+      <div class="tel cle">
+        <div class="telIcon yzIcon"></div>
+        <div class="telNum yz cle">
+          <input type="text" placeholder="请输入验证码">
+          <span>发送验证码</span>
+        </div>
+      </div>
+    </div>
+    <div class="btn">确定</div>
+    <div class="reg">
+      *注册代表您已同意
+      <a href="javascript:;">《公益中国用户协议》</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

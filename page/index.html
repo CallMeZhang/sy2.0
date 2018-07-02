@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <!--<meta name="flexible" content="initial-dpr=1,maximum-dpr=1" />-->
+  <!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+  <script src="./js/index.js"></script>
+  <title>首页</title>
+  <link rel="stylesheet" href="./styles/base.css">
+  <!--<link rel="stylesheet" href="./styles/common.css">-->
+  <style>
+    .contianer{
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    /*index*/
+    /*wrapper start*/
+    .wrapper {
+      background-color: #f4f5f6;
+    }
+
+    /*header start*/
+    .header {
+      width: 100%;
+      height: 3.5rem;
+    }
+
+    .header img {
+      width: 100%;
+      height: 3.5rem;
+    }
+
+    .header .hea {
+      width: 100%;
+      height: 0.62rem;
+      position: absolute;
+      top: 0.51rem;
+      overflow: hidden;
+    }
+
+    .header .header-search {
+      position: relative;
+      float: left;
+      width: 5rem;
+      height: 0.62rem;
+      line-height: 0.62rem;
+      margin-left: 0.49rem;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      border-radius: 0.4rem;
+    }
+
+    .header .header-search input {
+      border: none;
+      height: 100%;
+      background: transparent;
+      margin-left: 0.7rem;
+      font-size: 0.24rem;
+      color: #999;
+    }
+
+    .header .header-search .hea-ser {
+      width: 0.29rem;
+      height: 0.29rem;
+      background: url("./images/icon-ser.png") no-repeat left bottom;
+      background-size: cover;
+      /*margin-left: 0.31rem;*/
+      /*vertical-align: middle;*/
+      position: absolute;
+      top: 50%;
+      left: 0.3rem;
+      transform: translate(-50%,-50%);
+    }
+
+    .header .sea{
+      float: left;
+      font-size: 0.24rem;
+      height: 0.62rem;
+      line-height: 0.62rem;
+      color: #fff;
+      margin-left: 0.3rem;
+    }
+    .header .hea-add {
+      position: absolute;
+      right: 0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0.3rem;
+      height: 0.3rem;
+      background: url("./images/icon-ser.png") no-repeat top center;
+      background-size: cover;
+    }
+
+    /*ask start*/
+    .ask {
+      position: relative;
+      width: 100%;
+      height: 0.81rem;
+      background-color: #fff;
+    }
+
+    .ask .ask-con {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      /*line-height: 0.81rem;*/
+      overflow: hidden;
+    }
+    .ask .ask-con .askImg {
+      margin: 0 0.24rem;
+      width: 1.41rem;
+      height: 0.27rem;
+      background: url("./images/icon-ask.PNG") no-repeat center;
+      background-size: contain;
+    }
+    .ask .ask-con .askLine {
+      display: inline-block;
+      width: 1px;
+      height: 0.34rem;
+      border-left: 1px solid #666;
+    }
+
+    .ask .ask-con a {
+      font-size: 0.26rem;
+    }
+
+    .ask .ask-con .askCon {
+      position: absolute;
+      /*bottom: 0.06rem;*/
+      padding-left: 0.18rem;
+    }
+
+    .ask .askArrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url(./images/icon-arrow.png) no-repeat center 50%,50%;
+      height: 0.3rem;
+      width: 0.3rem;
+      right: 0.26rem;
+    }
+
+    /*ask end*/
+
+    /*ranking start*/
+    .ranking {
+      position: relative;
+      width: 100%;
+      /*height: 2.88rem;*/
+      padding: 0.41rem 0.24rem 0.31rem 0.5rem;
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+
+    .ranking .rank-top {
+      overflow: hidden;
+    }
+    .ranking .rank-top .rank{
+      float: left;
+    }
+    .ranking .rank-top .rankTwo{
+      margin-left: 0.67rem;
+    }
+    .ranking .rank-top h2 {
+      font-size: 0.26rem;
+      /*font-weight: 600;*/
+    }
+
+    .ranking .rank-top .rankNum {
+      padding: 0.36rem 0;
+      border-right: 1px solid #e1e1e1;
+    }
+
+    .ranking .rank-top .rankNum .red {
+      font-size: 0.4rem;
+      color: #f31e37;
+      /*font-weight: 600;*/
+      font-style: italic;
+    }
+
+    .ranking .rank-top .rankNum .bnum {
+      font-size: 0.28rem;
+      color: #000;
+      font-style: italic;
+    }
+
+    .ranking .rank-top .rankLeft {
+      padding-right: 0.77rem;
+    }
+
+    .ranking .rank-top .rankRight {
+      border: none
+    }
+
+    .ranking .rank-top a{
+      position: absolute;
+      top: 50%;
+      right: 0.26rem;
+      transform: translateY(-50%);
+      float: right;
+      display: inline-block;
+      width: 0.3rem;
+      height: 0.3rem;
+      background: url("./images/icon-arrow.png") no-repeat center;
+    }
+
+    .ranking .rankNo span {
+      font-size: 0.24rem;
+      color: #999;
+    }
+
+    /*ranking end*/
+
+    /*newLaba start*/
+    .newLaba {
+      width: 100%;
+      height: 0.88rem;
+      line-height: 0.88rem;
+      padding-left: 0.5rem;
+      background-color: #fff;
+      border-top: 1px solid #f4f5f6;
+    }
+
+    .newLaba .laba {
+      width: 0.38rem;
+      height: 0.32rem;
+      background: url("./images/icon-laba.png") no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+    }
+
+    .newLaba span {
+      padding-left: 0.3rem;
+      color: #666;
+      font-size:0.26rem;
+    }
+
+    /*news end*/
+
+    /*love start*/
+    .love {
+      margin-top: 0.18rem;
+    }
+
+    .loveBanner {
+      width: 100%;
+      height: 1.4rem;
+    }
+
+    .loveBanner img {
+      width: 100%;
+      height: 1.4rem;
+    }
+
+    /*collection*/
+    .collection {
+      display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+      display: -moz-box; /* 老版本语法: Firefox (buggy) */
+      display: -ms-flexbox; /* 混合版本语法: IE 10 */
+      display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+      display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+      justify-content: space-between;
+      padding: 0.45rem 0;
+      padding-left: 0.23rem;
+      background-color: #fff;
+    }
+
+    .collectionLeft {
+      flex: 1;
+      border-right: 1px solid #e1e1e1;
+    }
+
+    .collection h1 {
+      font-size: 0.3rem;
+      color: #333;
+    }
+
+    .collection p {
+      font-size: 0.22rem;
+      color: #999;
+      padding-top: 0.14rem;
+      padding-bottom: 0.49rem;
+    }
+
+    .collectionLeft .guolan {
+      text-align: center;
+    }
+
+    .collectionLeft img {
+      width: 2.45rem;
+      height: 1.61rem;
+    }
+
+    .collectionRight {
+      flex: 1;
+    }
+
+    .collectionRight .colRight {
+      display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+      display: -moz-box; /* 老版本语法: Firefox (buggy) */
+      display: -ms-flexbox; /* 混合版本语法: IE 10 */
+      display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+      display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+      justify-content: space-between;
+    }
+
+    .collectionRight .colTitle {
+      margin-left: 0.25rem;
+      margin-right: 0.46rem;
+    }
+
+    .collectionRight .colImg {
+      width: 1rem;
+      height: 1.34rem;
+      margin-right: 0.43rem;
+      background: url("./images/apple.png") no-repeat center;
+      background-size: contain;
+    }
+
+    .collectionRight .colImg.colImgxin {
+      width: 1.11rem;
+      height: 1.05rem;
+      margin-top: 0.24rem;
+      background: url("./images/xin.png") no-repeat center;
+      background-size: contain;
+    }
+
+
+    /*help*/
+    .help {
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+
+    .help .helpHead {
+      margin: 0 auto;
+      width: 4.51rem;
+      overflow: hidden;
+    }
+
+    .help .helpHead > div {
+      height: 0.94rem;
+      line-height: 0.94rem;
+      float: left;
+    }
+
+    .head-left {
+      width: 0.64rem;
+      background: url("./images/title_l.png") no-repeat center;
+      background-size: contain;
+    }
+
+    .head-tit {
+      width: 3.21rem;
+      font-size: 0.3rem;
+      color: #f31e37;
+      text-align: center;
+      /*font-weight: 600;*/
+    }
+
+    .head-right {
+      width: 0.64rem;
+      background: url("./images/title_r.png") no-repeat center;
+      background-size: contain;
+    }
+
+    .helpCon {
+      /*margin-top: 0.3rem;*/
+    }
+
+    .helpCon ul {
+      overflow: hidden;
+    }
+
+    .helpCon li {
+      float: left;
+      width: 50%;
+      padding: 0 0.26rem;
+      margin: 0.4rem 0;
+      box-sizing: border-box;
+    }
+
+    .helpConModle {
+      display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+      display: -moz-box; /* 老版本语法: Firefox (buggy) */
+      display: -ms-flexbox; /* 混合版本语法: IE 10 */
+      display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+      display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+    }
+
+    .helpConModle .helpPrice {
+      flex: 1;
+      width: 1.44rem;
+      margin-right: 0.24rem;
+    }
+
+    .helpConModle .helpPrice .tit {
+      font-size: 0.24rem;
+      color: #333;
+      /*font-weight: 600;*/
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+      /*line-height: 0.5rem;*/
+    }
+
+    .helpConModle .helpImg {
+      flex: 1;
+      width: 1.64rem;
+      height: 1.14rem;
+      background: url("./images/icon-mogu.jpg") no-repeat center;
+      /*background-size: contain;*/
+      background-size: cover;
+    }
+
+    .helpConModle .price {
+      font-size: 0.3rem;
+      color: #f31e37;
+      /*font-weight: 600;*/
+    }
+
+    /*myHelp*/
+    .myHelp {
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+
+    .myHelp .helpHead {
+      margin: 0 auto;
+      width: 4.51rem;
+      overflow: hidden;
+    }
+
+    .myHelp .helpHead > div {
+      height: 0.94rem;
+      line-height: 0.94rem;
+      float: left;
+    }
+
+    .myHelp .myHelpCon {
+      /*margin-top: 0.8rem;*/
+      margin-bottom: 0.4rem;
+      padding: 0 0.53rem;
+    }
+
+    .myHelp .myHelpCon ul {
+      overflow: hidden;
+    }
+
+    .myHelp .myHelpCon li {
+      float: left;
+      width: 25%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 0.26rem;
+      margin-top: 0.4rem;
+    }
+
+    .myHelp .myHelpCon li img {
+      width: 1.25rem;
+      height: 1.25rem;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 1px solid #efefef;
+    }
+
+    .myHelp .myHelpCon li div {
+      position: relative;
+      width: 1.25rem;
+      height: 1.25rem;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 1px solid #efefef;
+    }
+
+    .myHelp .myHelpCon li div p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 100%;
+    }
+
+    /*未关注贫困户*/
+    .myHelp .noHelp {
+      margin-top: 0.1rem;
+      text-align: center;
+    }
+    .myHelp .noHelp p{
+      font-size: 0.24rem;
+      color: #999;
+    }
+    .myHelp .noHelp button{
+      border: 1px solid #f31e37;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      color: #f31e37;
+      background-color: #fff;
+      padding: 0.1rem 0.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    /*support*/
+    .support {
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+
+    .support .apple {
+      /*margin: 0 auto;*/
+      width: 2.9rem;
+      height: 2.03rem;
+      background: url("./images/icon-apple.jpg") no-repeat center;
+      background-size: cover;
+    }
+
+    .support .helpHead {
+      margin: 0 auto;
+      width: 4.51rem;
+      overflow: hidden;
+    }
+
+    .support .helpHead > div {
+      height: 0.94rem;
+      line-height: 0.94rem;
+      float: left;
+    }
+
+    .support .apple-tit {
+      padding-top: 0.29rem;
+      padding-bottom: 0;
+      /*padding: 0.29rem 0;*/
+      font-size: 0.24rem;
+      color: #333;
+      /*font-weight: 600;*/
+      /*padding-bottom: 0;*/
+    }
+
+    .support .red {
+      font-size: 0.3rem;
+      color: #f31e37;
+      /*font-weight: 600;*/
+      padding-bottom: 0;
+    }
+
+    .support .collection {
+      padding-bottom: 0;
+    }
+
+    .support .collection .collectionLeft {
+      border: none;
+    }
+
+    .support .collection .helpConModle {
+      margin-right: 0.33rem;
+    }
+
+    /*nuisanceless*/
+    .nuisanceless{
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+    .nuisanceless .helpHead {
+      margin: 0 auto;
+      width: 4.51rem;
+      overflow: hidden;
+    }
+
+    .nuisanceless .helpHead > div {
+      height: 0.94rem;
+      line-height: 0.94rem;
+      float: left;
+    }
+    .nuisanceless .nuisanceCon{
+      margin-top: 0.6rem;
+      padding-bottom:0.3rem;
+      overflow: hidden;
+    }
+
+    .nuisanceCon ul{
+      width: 30000px;
+      overflow: hidden;
+    }
+    .nuisanceCon ul li{
+      float: left;
+      margin-left: 0.24rem;
+    }
+    .nuisanceCon ul li .nuisImg{
+      width: 2.91rem;
+      height: 2.03rem;
+    }
+    .nuisanceCon .nuisImg img{
+      height: 100%;
+      width: 100%;
+    }
+    .nuisanceCon .nuis{
+      width: 2.3rem;
+      margin: 0 auto;
+    }
+    .nuisanceCon .nuis .nuisFont{
+      width: 100%;
+      line-height: 0.64rem;
+      text-align: center;
+      font-size: 0.24rem;
+      color: #333;
+      /*font-weight: 600;*/
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .nuisanceCon .nuis .red{
+      font-size: 0.3rem;
+      color: #f31e37;
+      /*font-weight: 600;*/
+    }
+    .nuisanceCon .nuisAdd{
+      width: 2.9rem;
+      height: 2.03rem;
+      border: 1px solid #e9e9e9;
+      position: relative;
+    }
+    .nuisanceCon .nuisAdd a{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 0.26rem;
+      color: #666;
+    }
+    /*Specialty*/
+    .specialty {
+      margin-top: 0.18rem;
+      background-color: #fff;
+    }
+
+    .specialty .helpHead {
+      margin: 0 auto;
+      width: 4.51rem;
+      overflow: hidden;
+    }
+
+    .specialty .helpHead > div {
+      height: 0.94rem;
+      line-height: 0.94rem;
+      float: left;
+    }
+
+    .specialty .specialtyCon {
+      padding: 0 0.23rem 0.13rem 0.23rem;
+      box-sizing: border-box;
+      margin-top: 0.3rem;
+      /*padding-bottom: 0.13rem;*/
+    }
+
+    .specialty .specialtyCon ul {
+      overflow: hidden;
+
+    }
+
+    .specialty .specialtyCon ul li {
+      float: left;
+      width: 25%;
+    }
+    .specialty .specialtyCon>div{
+      margin-bottom: 0.26rem;
+    }
+    .specialty .specialtyCon img {
+      width: 1.64rem;
+      height: 1.14rem;
+    }
+
+    .specialty .specialtyCon a {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .specialty .specialtyCon a p{
+      position: absolute;
+      font-size: 0.64rem;
+      text-align: center;
+      color: #fff;
+    }
+    /*vanguard*/
+    .vanguard .myHelpCon li img {
+      width: 0.79rem;
+      height: 0.79rem;
+    }
+
+    /*good*/
+    .myHelp .fen {
+      color: #666;
+    }
+
+
+    /**/
+
+  </style>
+</head>
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <!--header  start-->
+    <div class="header">
+      <!--轮播-->
+      <img src="./images/icon-banner.jpg" alt="banner">
+      <!--搜索框-->
+      <div class="hea">
+        <div class="header-search">
+          <i class="hea-ser"></i>
+          <input type="text" placeholder="大家都在搜：苹果">
+        </div>
+        <div class="sea">搜索</div>
+        <i class="hea-add"></i>
+      </div>
+    </div>
+    <!--header end-->
+
+    <!--ask start-->
+    <div class="ask">
+      <div class="ask-con">
+        <i class="askImg"></i>
+        <span class="askLine"></span>
+        <a href="#"><span class="askCon">平台的公益回馈是什么？</span></a>
+        <i class="askArrow"></i>
+      </div>
+    </div>
+    <!--ask end-->
+
+    <!--ranking start-->
+    <div class="ranking">
+      <div class="rank-top">
+        <div class="rank">
+          <h2>您在所属单位的排名</h2>
+          <div class="rankNum rankLeft">
+            <span class="red">1326</span>
+            <em class="bnum">/266257</em>
+          </div>
+          <div class="rankNo">
+            <span>No.1:宋雪梅</span>
+          </div>
+        </div>
+        <div class="rank rankTwo">
+          <h2>您在所属部门的排名</h2>
+          <div class="rankNum rankRight">
+            <span class="red">03</span>
+            <em class="bnum">/236</em>
+          </div>
+          <div class="rankNo">
+            <span>No.1:齐霏</span>
+          </div>
+        </div>
+        <a href="#"></a>
+      </div>
+    </div>
+    <!--ranking end-->
+
+    <!--news start-->
+    <div class="newLaba">
+      <i class="laba"></i>
+      <span>张**帮扶贫困户王**××元</span>
+    </div>
+    <!--news end-->
+
+    <!--love start-->
+    <div class="love">
+      <div class="loveBanner">
+        <a href="#"><img src="./images/daai01.jpg" alt="banner"></a>
+      </div>
+      <!--collection-->
+      <div class="collection">
+        <div class="collectionLeft">
+          <h1>采集专区</h1>
+          <p>企业采集扶贫码专区</p>
+          <div class="guolan">
+            <img src="./images/icon-guolan.png" alt="guolan">
+          </div>
+        </div>
+        <div class="collectionRight">
+          <div class="colRight">
+            <div class="colTitle">
+              <h1>有机认证</h1>
+              <p>天然产品，农药无残留</p>
+            </div>
+            <div class="colImg">
+              <!--<img src="images/apple.png" alt="apple">-->
+            </div>
+          </div>
+          <div class="colRight" style="border-top:1px solid #e1e1e1;padding-top: 0.27rem">
+            <div class="colTitle">
+              <h1>无公害认证</h1>
+              <p>产地无污染，生产过程规范</p>
+            </div>
+            <div class="colImg colImgxin">
+              <!--<img src="images/xin.png" alt="apple">-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="more">
+        <a href="#">查看更多></a>
+      </div>
+
+      <!--help-->
+      <div class="help">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">大家帮</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="helpCon">
+          <ul>
+            <li>
+              <div class="helpConModle">
+                <div class="helpPrice">
+                  <div class="tit">自家产的小米</div>
+                  <div class="tit">绿色无污染</div>
+                  <p class="price">￥826.00</p>
+                </div>
+                <div class="helpImg"></div>
+              </div>
+            </li>
+            <li>
+              <div class="helpConModle">
+                <div class="helpPrice">
+                  <div class="tit">自家产的小米</div>
+                  <div class="tit">绿色无污染绿色无污染</div>
+                  <p class="price">￥826.00</p>
+                </div>
+                <div class="helpImg"></div>
+              </div>
+            </li>
+            <li>
+              <div class="helpConModle">
+                <div class="helpPrice">
+                  <div class="tit">自家产的小米</div>
+                  <div class="tit">绿色无污染</div>
+                  <p class="price">￥826.00</p>
+                </div>
+                <div class="helpImg"></div>
+              </div>
+            </li>
+            <li>
+              <div class="helpConModle">
+                <div class="helpPrice">
+                  <div class="tit">自家产的小米</div>
+                  <div class="tit">绿色无污染绿色无污染</div>
+                  <p class="price">￥826.00</p>
+                </div>
+                <div class="helpImg"></div>
+              </div>
+            </li>
+            <li>
+              <div class="helpConModle">
+                <div class="helpPrice">
+                  <div class="tit">自家产的小米</div>
+                  <div class="tit">绿色无污染</div>
+                  <p class="price">￥826.00</p>
+                </div>
+                <div class="helpImg"></div>
+              </div>
+            </li>
+            <li>
+              <div class="helpConModle">
+                <div class="helpPrice">
+                  <div class="tit">自家产的小米</div>
+                  <div class="tit">绿色无污染绿色无污染</div>
+                  <p class="price">￥826.00</p>
+                </div>
+                <div class="helpImg"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="#">查看更多></a>
+        </div>
+      </div>
+
+      <!--myHlep-->
+      <div class="myHelp">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">我关注的贫困户</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="myHelpCon">
+          <ul>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+            </li>
+            <li>
+              <div class="addPop">
+                <p>+ 添加</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="noHelp" style="display: none;">
+          <p>您还没有关注过贫困户，赶紧行动吧！</p>
+          <button type="button">去关注</button>
+        </div>
+        <div class="more">
+          <a href="#">查看更多></a>
+        </div>
+      </div>
+
+      <!--support-->
+      <div class="support">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">贫困户自营</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="collection">
+          <div class="collectionLeft">
+            <div class="apple"></div>
+            <p class="apple-tit">自家产的小米绿色无公害</p>
+            <p class="red">￥8116.00</p>
+          </div>
+          <div class="collectionRight">
+            <div class="helpConModle">
+              <div class="helpPrice">
+                <div class="tit">自家产的小米</div>
+                <div class="tit">绿色无污染</div>
+                <p class="price">￥826.00</p>
+              </div>
+              <div class="helpImg"></div>
+            </div>
+            <div class="helpConModle">
+              <div class="helpPrice">
+                <div class="tit">自家产的小米</div>
+                <div class="tit">绿色无污染绿色无污染</div>
+                <p class="price">￥826.00</p>
+              </div>
+              <div class="helpImg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="more">
+        <a href="#">查看更多></a>
+      </div>
+
+      <!--nuisanceless-->
+      <div class="nuisanceless">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">无公害</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="nuisanceCon">
+          <ul>
+            <li>
+              <div class="nuisImg">
+                <img src="./images/icon-apple.jpg" alt="apple">
+              </div>
+              <div class="nuis">
+                <p class="nuisFont">自家产的小米，绿色无公害</p>
+                <p class="red">￥816.00</p>
+              </div>
+            </li>
+            <li>
+              <div class="nuisAdd">
+                <a href="#">查看更多 ></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--organic-->
+      <div class="support">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">有机</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="collection">
+          <div class="collectionLeft">
+            <div class="apple"></div>
+            <p class="apple-tit">自家产的小米绿色无公害</p>
+            <p class="red">￥8116.00</p>
+          </div>
+          <div class="collectionRight">
+            <div class="helpConModle">
+              <div class="helpPrice">
+                <div class="tit">自家产的小米</div>
+                <div class="tit">绿色无污染</div>
+                <p class="price">￥826.00</p>
+              </div>
+              <div class="helpImg"></div>
+            </div>
+            <div class="helpConModle">
+              <div class="helpPrice">
+                <div class="tit">自家产的小米</div>
+                <div class="tit">绿色无污染绿色无污染</div>
+                <p class="price">￥826.00</p>
+              </div>
+              <div class="helpImg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="more">
+        <a href="#">查看更多></a>
+      </div>
+
+      <!--Specialty-->
+      <div class="specialty">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">特产馆</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="specialtyCon">
+          <div class="chunhua">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun-font.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="chunhua">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun-font.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="chunhua">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun-font.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="chunhua">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun-font.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-chun.jpg" alt="diqu">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--Vanguard-->
+      <div class="myHelp vanguard">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">脱贫先锋</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="myHelpCon">
+          <ul>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三张三</p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+            </li>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="#">查看更多></a>
+        </div>
+      </div>
+
+      <!--good-->
+      <div class="myHelp">
+        <div class="helpHead">
+          <div class="head-left"></div>
+          <div class="head-tit">优秀助理人</div>
+          <div class="head-right"></div>
+        </div>
+        <div class="myHelpCon">
+          <ul>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+              <p class="fen">总评分<span>4.37</span></p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+              <p class="fen">总评分<span>4.37</span></p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+              <p class="fen">总评分<span>4.37</span></p>
+            </li>
+            <li>
+              <img src="./images/icon-pop.jpg" alt="pop">
+              <p>张三</p>
+              <p class="fen">总评分<span>4.37</span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="#">查看更多></a>
+        </div>
+      </div>
+    </div>
+    <!--love end-->
+  </div>
+</div>
+</body>
+</html>
+

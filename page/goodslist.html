@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <script src="./js/index.js"></script>
+  <title>商品列表</title>
+  <link rel="stylesheet" href="./styles/base.css">
+  <style>
+    .contianer{
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    /*搜索*/
+    .headSer{
+      position: relative;
+      width: 100%;
+      background-color: #f4f6f5;
+      padding: 0.15rem 0.2rem;
+      border-bottom: 1px solid #ccc;
+    }
+    .headSer .headBox{
+      border: 1px solid #ccc;
+      width: 88%;
+      height: 0.6rem;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      border-radius:10px;
+      background-color: #fff;
+    }
+    .headSer .headBox i{
+      float: left;
+      width: 0.25rem;
+      height: 0.25rem;
+      display: inline-block;
+      background: url("./images/goodslist/icon-ap64.png") no-repeat center;
+      background-size: cover;
+      vertical-align: middle;
+      margin: 0.15rem 0.2rem 0;
+    }
+    .headSer .headBox input{
+      float: left;
+      border:none;
+      width: 80%;
+      height: 100%;
+      font-size: 0.24rem;
+      background: transparent;
+    }
+    .headSer span{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: inline-block;
+      height: 0.8rem;
+      width: 1rem;
+      line-height: 0.8rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.26rem;
+    }
+    /*导航*/
+    .nav{
+      height: 0.9rem;
+      line-height: 0.9rem;
+      width: 100%;
+    }
+    .nav>div{
+      float: left;
+      width: 50%;
+      text-align: center;
+      font-size: 0.28rem;
+      color: #666;
+      border-bottom: 2px solid #e1e1e1;
+    }
+    .nav .sel{
+      color: #F31e37;
+      border-bottom: 2px solid #F31e37;
+    }
+
+    /*排序*/
+    .sele{
+      line-height: 0.8rem;
+    }
+    .sele .sort{
+      border-bottom: 1px solid #e1e1e1;
+    }
+    .sele .sort li{
+      float: left;
+      width: 24%;
+      overflow: hidden;
+    }
+    .sele .sort .selList{
+      padding-left: 0.4rem;
+    }
+    .sele .sort .selList>div{
+      float: left;
+      font-size: 0.26rem;
+      color: #666;
+    }
+    .sele .sort li .upD{
+      height: 0.2rem;
+      width: 0.15rem;
+      background: url("./images/goodslist/ap89.png") no-repeat center;
+      background-size: cover;
+      margin-left: 0.1rem;
+      margin-top: 0.28rem;
+    }
+    .sele .sort li .sel{
+      background: url("./images/goodslist/ap90.png") no-repeat center;
+      background-size: cover;
+    }
+
+    .sele .place{
+      padding: 0.1rem;
+      border-bottom: 1px solid #e1e1e1;
+      overflow: hidden;
+    }
+    .sele .place li{
+      float: left;
+      height:0.2rem;
+      margin-left: 0.2rem;
+      line-height:0.2rem;
+      padding: 0.15rem 0.2rem;
+      background-color: #eee;
+      overflow: hidden;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      border-radius:5px;
+    }
+    .sele .place li>span{
+      float: left;
+      font-size: 0.24rem;
+      display: inline-block;
+    }
+    .sele .place .xxjt{
+      float: right;
+      width: 0.2rem;
+      height: 0.15rem;
+      background: url("./images/goodslist/ap66_2.png") no-repeat center;
+      background-size: cover;
+      margin-left: 0.1rem;
+    }
+
+    .goodsList{
+      padding-top: 0.1rem;
+    }
+    .goodsList .goods{
+      padding: 0.1rem 0.2rem;
+    }
+    .goodsList .goods .goodImg{
+      float: left;
+      margin-right: 0.2rem;
+      height: 1.6rem;
+      width: 2.3rem;
+      position: relative;
+    }
+    .goodsList .goods .goodImg img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      width: 100%;
+      min-height:1.6rem;
+    }
+    .goodsList .goods .goodsCont{
+      border-bottom: 1px solid #e1e1e1;
+      float: right;
+      width: 63%;
+    }
+    .goodsList .goods .goodsCont h3{
+      font-size: 0.32rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .goodsList .goods .goodsCont .tPoor{
+      display: inline-block;
+      width: 1.35rem;
+      height: 0.3rem;
+      background: url("./images/goodslist/zichan.png") no-repeat center;
+      background-size:contain;
+      vertical-align: middle;
+    }
+    .goodsList .goods .goodsCont p{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.2rem;
+      color: #999;
+    }
+    .goodsList .goods .goodsCont .price{
+      color: #999;
+      margin-bottom: 0.1rem;
+    }
+    .goodsList .goods .goodsCont .price span{
+      font-size: 0.24rem;
+      color: #666;
+    }
+    .goodsList .goods .goodsCont .price .red{
+      color: #F31e37;
+      font-size: 0.26rem;
+    }
+    .goodsList .goods .goodsCont .gray{
+      float: right;
+      margin-right: 0.2rem;
+      font-size: 0.24rem;
+    }
+    .goodsList .goods .goodsCont .shopPrice{
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <!--头部搜索-->
+    <div class="headSer">
+      <div class="headBox cle">
+        <i></i>
+        <input type="text" placeholder="搜索">
+      </div>
+      <span>搜索</span>
+    </div>
+
+    <!--导航-->
+    <div class="nav cle">
+      <div class="navLeft sel">大爱超市</div>
+      <div class="navRight">善源商场</div>
+    </div>
+    <!--排序-->
+    <div class="sele">
+      <div class="sort">
+        <ul class="cle">
+          <li>
+            <div class="selList cle">
+              <div> 综合排序</div>
+            </div>
+          </li>
+          <li>
+            <div class="selList cle">
+              <div>价格</div>
+              <div class="upD sel"></div>
+            </div>
+          </li>
+          <li>
+            <div class="selList cle">
+              <div>销量</div>
+              <div class="upD"></div>
+            </div>
+          </li>
+          <li>
+            <div class="selList cle">
+              <div>更新时间</div>
+              <div class="upD"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="place">
+        <ul class="cle">
+          <li>
+            <span>区域</span>
+            <span class="xxjt"></span>
+          </li>
+          <li>
+            <span>分类</span>
+            <span class="xxjt"></span>
+          </li>
+          <li>
+            <span>产品认证</span>
+            <span class="xxjt"></span>
+          </li>
+          <li>
+            <span>产品经营者</span>
+            <span class="xxjt"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--大爱超市 商品列表-->
+    <div class="goodsList">
+      <!--有贫困户代销-->
+      <div class="goods cle">
+        <div class="goodImg">
+          <img src="./images/goodslist/ap8.jpg" alt="商品图片">
+        </div>
+        <div class="goodsCont">
+          <h3>
+            <span class="tPoor"></span>
+            测试标题测试标题测试标题测试标题测试标题
+          </h3>
+          <p>许贫四二的产品已获得0人次帮助</p>
+          <p>关注人：九江，许，陈学娇</p>
+          <div class="price cle">
+            <span class="red">￥10.00</span>
+            <span class="gray">免运费</span>
+          </div>
+        </div>
+      </div>
+      <!--有运费-->
+      <div class="goods cle">
+        <div class="goodImg">
+          <img src="./images/goodslist/ap8.jpg" alt="商品图片">
+        </div>
+        <div class="goodsCont">
+          <h3>
+            <!--<span class="tPoor"></span>-->
+            测试标题测试标题测试标题测试标题测试标题
+          </h3>
+          <p>许贫四二的产品已获得0人次帮助</p>
+          <p>关注人：九江，许，陈学娇</p>
+          <div class="price cle">
+            <span class="red">￥10.00</span>
+            <span class="gray">运费：8.00元</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--善源商场 商品列表-->
+    <div class="goodsList">
+      <!--有运费-->
+      <div class="goods cle">
+        <div class="goodImg">
+          <img src="./images/goodslist/ap8.jpg" alt="商品图片">
+        </div>
+        <div class="goodsCont">
+          <h3>
+            测试标题测试标题测试标题测试标题测试标题
+          </h3>
+          <p>产品规格：12/箱</p>
+          <div class="price shopPrice cle">
+            <span class="red">10</span>
+            <span>积分+</span>
+            <span class="red">11.00</span>
+            <span>元</span>
+            <span class="gray">免运费</span>
+          </div>
+        </div>
+      </div>
+      <div class="goods cle">
+        <div class="goodImg">
+          <img src="./images/goodslist/ap8.jpg" alt="商品图片">
+        </div>
+        <div class="goodsCont">
+          <h3>
+            测试标题测试标题测试标题测试标题测试标题
+          </h3>
+          <p>产品规格：12/箱</p>
+          <div class="price shopPrice cle">
+            <span class="red">10</span>
+            <span>积分+</span>
+            <span class="red">11.00</span>
+            <span>元</span>
+            <span class="gray">免运费</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <!--<meta name="flexible" content="initial-dpr=1,maximum-dpr=1" />-->
+    <!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+  <script src="./js/index.js"></script>
+    <title>我的</title>
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+  <style>
+    .contianer{
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .wrapper{
+      background-color: #f4f6f5;
+    }
+    /*header start*/
+    .header {
+      position: relative;
+      width: 100%;
+      height: 3.66rem;
+      background: url("./images/icon-bg.jpg") no-repeat center;
+      background-size: cover;
+    }
+    .header .myInfo {
+      /*background-color: pink;*/
+      padding: 0.69rem 0.24rem 0.34rem 0.26rem;
+    }
+    .header .myInfo>div{
+      float: left;
+    }
+    .header .myInfo .photo{
+      width: 1.2rem;
+      height: 1.2rem;
+      -webkit-border-radius:50%;
+      -moz-border-radius:50%;
+      border-radius:50%;
+      background: url("./images/icon-man.jpg") no-repeat;
+      background-size: contain;
+    }
+    .header .myInfo .nameInfo{
+      margin-left: 0.4rem;
+    }
+    .header .myInfo .nameInfo p{
+      color: #fff;
+      line-height: 0.4rem;
+      font-size: 0.2rem;
+    }
+    .header .myInfo .nameInfo .name{
+      font-size:0.3rem;
+    }
+    .header .myInfo .nameInfo .admin{
+      margin-bottom: 0.3rem;
+    }
+    .header .myInfo .nameInfo .admin span:last-child{
+      padding-left: 0.23rem;
+    }
+    .header .myInfo .config{
+      /*width: 0.427rem;*/
+      /*height: 0.427rem;*/
+      /*background: url("./images/icon-config.png") no-repeat right center;*/
+      /*background-size: cover;*/
+      float: right;
+    }
+    .header .myInfo .config i{
+      color: #fff;
+      font-size:0.4rem;
+    }
+    .header .myMoney{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.88rem;
+      padding:0 0.92rem;
+      background-color: rgba(0,0,0,0.3);
+    }
+    .header .myMoney div{
+      float: left;
+      line-height: 0.88rem;
+      color: #fff;
+      font-size: 0.22rem;
+    }
+    .header .myMoney div:last-child{
+      float: right;
+    }
+    /*header end*/
+
+    /*content start*/
+    /*sale*/
+    .sale .saleIcon{
+      width: 100%;
+      height: 1.41rem;
+      padding:0.15rem;
+      background-color: #fff;
+      border-bottom: 1px solid #e1e1e1;
+    }
+    .sale .saleIcon ul{
+      overflow: hidden;
+    }
+    .sale .saleIcon li{
+      float: left;
+      width: 25%;
+      text-align: center;
+      font-size: 0.28rem;
+    }
+    .sale .saleIcon li .icon{
+      font-size: 0.4rem;
+    }
+    /*content end*/
+    /*公共样式*/
+    .pubTit{
+      width: 100%;
+      height: 0.88rem;
+      line-height: 0.88rem;
+      padding:0 0.24rem;
+      overflow: hidden;
+      background-color: #fff;
+      border-bottom: 1px solid #e1e1e1;
+    }
+    .pubTit span{
+      float: left;
+      font-size: 0.28rem;
+      color: #333;
+    }
+    .pubTit .pubRight{
+      float: right;
+      display: inline-block;
+      width: 1.5rem;
+      font-size: 0.26rem;
+      color: #999;
+      margin-right: 0.15rem;
+      /*文字溢出*/
+      white-space: nowrap;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .pubTit a{
+      float: right;
+      font-size: 0.28rem;
+    }
+    .boxTit{
+      width: 100%;
+      height: 0.64rem;
+      padding: 0 0.24rem;
+      line-height: 0.64rem;
+      font-size: 0.24rem;
+      color: #666;
+    }
+  </style>
+  </head>
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <!--header start-->
+    <div class="header">
+      <div class="myInfo cle">
+        <div class="photo"></div>
+        <div class="nameInfo">
+          <p class="name">张女士</p>
+          <p class="admin">
+            <span>山西省分行</span>
+            <span>管理员</span>
+          </p>
+          <p class="thanks">
+            感谢您参与公益中行精准扶贫<span>22</span>天。
+          </p>
+          <p>担当社会责任，我们一起行动。</p>
+        </div>
+        <div class="config">
+          <i class="icon iconfont icon-shezhi"></i>
+        </div>
+      </div>
+      <div class="myMoney">
+        <div>
+          帮扶过：<span>22</span>人次
+        </div>
+        <div>中益钱包：<span>985</span>积分</div>
+      </div>
+    </div>
+    <!--header end-->
+
+    <!--content start-->
+    <div class="content">
+      <!--出售全部商品-->
+      <div class="sale">
+        <div class="pubTit">
+          <span>出售的全部订单</span>
+          <a class="icon iconfont icon-jiantouxiangyou"></a>
+        </div>
+        <div class="saleIcon">
+          <ul>
+            <li>
+              <p class="icon iconfont icon-daifahuo"></p>
+              <p>待发货</p>
+            </li>
+            <li>
+              <p class="icon iconfont icon-daishouhuo"></p>
+              <p>待收货</p>
+            </li>
+            <li>
+              <p class="icon iconfont icon-1337tuikuandanguanli"></p>
+              <p>退款管理</p>
+            </li>
+            <li>
+              <p class="icon iconfont icon-pingjiaguanli"></p>
+              <p>评价管理</p>
+            </li>
+          </ul>
+        </div>
+        <!--消息中心-->
+        <div class="pubTit" style="border:none">
+          <span>消息中心</span>
+          <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+        </div>
+      </div>
+      <!--管理者-->
+      <div>
+        <div class="boxTit">
+          管理者
+        </div>
+        <div class="toolBoxCon">
+          <div class="pubTit">
+            <span>管理员帐号管理</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>管理员统计</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>团组织管理</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>志愿者活动审核</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit" style="border:none">
+            <span>志愿队任务管理</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+      <!--我的工具箱-->
+      <div>
+        <div class="boxTit">
+          我的工具箱
+        </div>
+        <div class="toolBoxCon">
+          <div class="pubTit">
+            <span>完善个人资料</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>发布产品</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>交易统计</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>余额提现</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>QQ客服</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>电话客服</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>我的帮扶人</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>我的助理人</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit" style="border:none">
+            <span>我的报名管理</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+      <!--精准扶贫-->
+      <div>
+        <div class="boxTit">
+          精准扶贫
+        </div>
+        <div class="poorBoxCon">
+          <div class="pubTit">
+            <span>个人购买订单</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+            <span class="pubRight">购买记录</span>
+          </div>
+          <div class="pubTit">
+            <span>个人购买订单</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+            <span class="pubRight">购买记录购买记录</span>
+          </div>
+          <div class="pubTit" style="border:none">
+            <span>个人购买订单</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+      <!--公益档案-->
+      <div>
+        <div class="boxTit">
+          公益档案
+        </div>
+        <div class="toolBoxCon">
+          <div class="pubTit">
+            <span>公益记录</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>公益证书</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+      <!--志愿者-->
+      <div>
+        <div class="boxTit">
+          志愿者
+        </div>
+        <div class="toolBoxCon">
+          <div class="pubTit">
+            <span>我参加的志愿队</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>我参与的任务</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+      <!--测试专项-->
+      <div>
+        <div class="boxTit">
+          测试专项
+        </div>
+        <div class="toolBoxCon">
+          <div class="pubTit">
+            <span>测试页面</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+          <div class="pubTit">
+            <span>陈锋测试发布会</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+      <!--平台客服-->
+      <div>
+        <div class="boxTit">
+          平台客服
+        </div>
+        <div class="toolBoxCon">
+          <div class="pubTit">
+            <span>公益平台客服</span>
+            <a href="javascript:;" class="icon iconfont icon-jiantouxiangyou"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--content end-->
+  </div>
+</div>
+</body>
+</html>

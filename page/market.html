@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <!--<meta name="flexible" content="initial-dpr=1,maximum-dpr=1" />-->
+    <!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+    <script src="./js/index.js"></script>
+    <title>善源商场</title>
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <style>
+      .contianer{
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+      .wrapper{
+        width: 100%;
+        /*padding: 0 0.32rem;*/
+        background-color: #f4f5f6;
+      }
+
+      /*header*/
+      .headJf{
+        width: 100%;
+        height: 0.56rem;
+        line-height: 0.56rem;
+        text-align: center;
+      }
+      .headJf p{
+        color:#999;
+        font-size: 0.24rem;
+      }
+      .header .headNav{
+        padding: 0 0.24rem;
+        background-color: #fff;
+      }
+      .header .headNav ul{
+        overflow: hidden;
+        padding-bottom: 0.43rem;
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+      }
+      .header .headNav li{
+        float: left;
+        width: 25%;
+        padding-top: 0.43rem;
+        /*flex: 1;*/
+        text-align: center;
+        font-size: 0.24rem;
+        color: #666;
+      }
+      .header .headNav li img{
+        width: 1rem;
+        height: 1rem;
+        -webkit-border-radius:50%;
+        -moz-border-radius:50%;
+        border-radius:50%;
+      }
+
+      /*loveSupport*/
+      .loveCon .loveSupport{
+        /*margin-top: 0.27rem;*/
+        background-color: #fff;
+      }
+      .loveCon .loveFont{
+        text-align: center;
+        font-size: 0.24rem;
+        color: #999;
+      }
+
+      /*爱心特惠*/
+      .loveSupport{
+        /*padding: 0 0.32rem;*/
+        padding-left: 0.24rem;
+        overflow: hidden;
+      }
+      .loveContent{
+        padding-bottom: 0.41rem;
+      }
+      .loveContent ul{
+        width: 30000px;
+        overflow: hidden;
+      }
+      .loveContent ul li{
+        float: left;
+        width: 3rem;
+      }
+      .loveContent .supImg{
+        position: relative;
+        width: 2.9rem;
+        height: 2.03rem;
+        text-align: center;
+      }
+      .loveContent .supImg img{
+        width: 2.7rem;
+        height: 1.68rem;
+      }
+      /*.loveContent .supImg .supp{*/
+        /*background: url(./images/icon-bing.jpg) no-repeat center;*/
+        /*width: 3.6rem;*/
+        /*height: 2.25rem;*/
+        /*background-size: contain;*/
+        /*margin:0 auto;*/
+      /*}*/
+      .loveContent .supImg .jb{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        /*height: 0.453rem;*/
+        /*line-height: 0.453rem;*/
+        background: -webkit-linear-gradient(left,rgba(252,126,3,0.5),rgba(255,255,255,0));
+        background: -moz-linear-gradient(left,rgba(252,126,3,0.5),rgba(255,255,255,0));
+        background: linear-gradient(left,rgba(252,126,3,0.5),rgba(255,255,255,0));
+        font-size: 0.24rem;
+        color:#fff;
+        padding: 0.04rem 0.19rem;
+        text-align: left;
+      }
+      .loveContent .supTit p{
+        padding: 0 0.22rem;
+        line-height: 0.5rem;
+        font-size: 0.26rem;
+        color: #333;
+      }
+      .loveContent .sup .supPtit{
+        height: 1rem;
+        /*padding-top:0.427rem;*/
+        /*padding-bottom: 0.253rem;*/
+        margin: 0.32rem 0 0.19rem 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .loveContent .supTit .red{
+        color: #f31e37;
+        font-size: 0.32rem;
+      }
+      .loveContent .supTit .gray{
+        color: #999;
+        font-size: 0.24rem;
+      }
+      .loveContent .supTit .gray span{
+        text-decoration: line-through;
+      }
+
+      /*最多优惠*/
+      .discount{
+        margin-top: 0.18rem;
+        background-color: #fff;
+        padding: 0 0.24rem 0.3rem 0.24rem;
+      }
+      .disContent ul{
+        overflow: hidden;
+      }
+      .disContent li{
+        float: left;
+        width: 50%;
+        margin-top: 0.3rem;
+      }
+      .disContent .disImg{
+        text-align: center;
+      }
+      .disContent .disImg img{
+        /*height: 3.147rem;*/
+        /*width: 4.5rem;*/
+        height: 100%;
+        width: 90%;
+      }
+      .disContent .disTit .disPtit{
+        height: 0.75rem;
+        margin: 0.39rem 0;
+        padding:0 0.16rem;
+        font-size: 0.28rem;
+        color: #333;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .disContent .disTit .red{
+        padding:0 0.16rem;
+        font-size: 0.22rem;
+        color: #333;
+      }
+      .disContent .disTit .red span{
+        font-size: 0.28rem;
+        color: #F31e37;
+      }
+
+      /*最多销量*/
+      .moreSale{
+        margin-top: 0.20rem;
+        background-color: #fff;
+      }
+      .moreSale .moreSaleCon{
+        margin-top: 0.3rem;
+        padding: 0 0.24rem;
+      }
+      .moreSaleCon li{
+        overflow: hidden;
+      }
+      .moreSaleCon .saleLeft{
+        float: left;
+        width: 2.9rem;
+        height: 2.03rem;
+      }
+      .moreSaleCon .saleLeft img{
+        height: 100%;
+        width: 100%;
+      }
+      .moreSaleCon .saleRight{
+        float: right;
+        border-bottom:1px solid #e1e1e1;
+      }
+      .saleRight .saleTit{
+        width: 3.36rem;
+        height:0.75rem;
+        margin-top: 0.33rem;
+        font-size: 0.28rem;
+        color: #333;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .saleRight .saleJf{
+        margin-top: 0.31rem;
+        padding-bottom: 0.6rem;
+        font-size: 0.26rem;
+        color: #333;
+      }
+      .saleRight .saleJf span{
+        color: #F31e37;
+        font-size: 0.32rem;
+      }
+
+      /*一起善源*/
+      .us{
+        margin-top: 0.18rem;
+        background-color: #fff;
+      }
+      .usContent{
+        margin-top: 0.6rem;
+        padding: 0 0.24rem;
+      }
+      .usContent .province{
+        display: flex;
+        justify-content: space-between;
+        /*overflow: hidden;*/
+        border-bottom:1px solid #e1e1e1;
+      }
+      .usContent .province a{
+        /*float: left;*/
+        position: relative;
+        display: inline-block;
+        width: 24%;
+        height: 1.4rem;
+        text-align: center;
+        padding: 0.21rem 0;
+      }
+      .usContent .province a:nth-child(2),
+      .usContent .province a:nth-child(3){
+        border-right:1px solid #e1e1e1;
+      }
+      .usContent .province a img{
+        width: 1.23rem;
+        height: 1rem;
+      }
+      .usContent .province a p{
+        font-size: 0.24rem;
+        color: #666;
+      }
+      .usContent .province .proFirst img{
+        width: 100%;
+        height: 100%;
+      }
+      .usContent .province a span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%,-50%);
+        font-size: 0.24rem;
+        color: #999;
+      }
+      /*公共样式*/
+      .loveTit{
+        width: 5.88rem;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .loveTit>div{
+        float: left;
+        height: 0.9rem;
+        line-height: 0.9rem;
+      }
+      .loveTit .titLeft{
+        width: 2rem;
+        background: url("./images/icon-left.png") no-repeat center;
+        background-size: contain;
+      }
+      .loveTit .titCon{
+        width: 1.88rem;
+        text-align: center;
+        font-size: 0.3rem;
+        color: #333;
+      }
+      .loveTit .titRight{
+        width: 2rem;
+        background: url("./images/icon-right.png") no-repeat center;
+        background-size: contain;
+      }
+    </style>
+  </head>
+<body>
+<div class="contianer">
+  <div class="wrapper">
+    <!--header start-->
+    <div class="header">
+      <div class="headJf">
+        <p>善企让利，回馈爱心人士</p>
+      </div>
+      <div class="headNav">
+        <ul>
+          <li>
+            <div>
+              <img src="./images/sy_icon1.png" alt="navImg">
+              <p>食品饮料</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon2.png" alt="navImg">
+              <p>数码家电</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon3.png" alt="navImg">
+              <p>生活日用</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon4.png" alt="navImg">
+              <p>珠宝首饰</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon5.png" alt="navImg">
+              <p>服装鞋帽</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon6.png" alt="navImg">
+              <p>健康护理</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon7.png" alt="navImg">
+              <p>母婴用品</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src="./images/sy_icon8.png" alt="navImg">
+              <p>全部商品</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--header end-->
+
+    <!--loveSupport start-->
+    <div class="loveCon">
+      <div class="headJf">
+        <p>使用积分不影响公益排名</p>
+      </div>
+      <!--爱心特惠-->
+      <div class="loveSupport">
+        <div class="loveTit">
+          <div class="titLeft"></div>
+          <div class="titCon">爱心特惠</div>
+          <div class="titRight"></div>
+        </div>
+        <div class="loveFont">积分全额购买不花一分钱</div>
+        <div class="loveContent">
+          <ul>
+            <a href="#">
+              <li>
+                <div class="sup">
+                  <div class="supImg">
+                    <!--<div class="supp"></div>-->
+                    <img src="./images/icon-bing.jpg" alt="冰箱">
+                    <div class="jb">
+                      <p>库存充裕</p>
+                    </div>
+                  </div>
+                  <div class="supTit">
+                    <p class="supPtit">自家产的小米，绿色无污染的</p>
+                    <p><span class="red">30,000</span>积分</p>
+                    <p class="gray">原价：<span>￥9,999.00</span></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <div class="sup">
+                  <div class="supImg">
+                    <!--<div class="supp"></div>-->
+                    <img src="./images/icon-bing.jpg" alt="冰箱">
+                    <div class="jb">
+                      <p>库存充裕</p>
+                    </div>
+                  </div>
+                  <div class="supTit">
+                    <p class="supPtit">自家产的小米，绿色无污染的</p>
+                    <p><span class="red">30,000</span>积分</p>
+                    <p class="gray">原价：<span>￥9,999.00</span></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <div class="sup">
+                  <div class="supImg">
+                    <!--<div class="supp"></div>-->
+                    <img src="./images/icon-bing.jpg" alt="冰箱">
+                    <div class="jb">
+                      <p>库存充裕</p>
+                    </div>
+                  </div>
+                  <div class="supTit">
+                    <p class="supPtit">自家产的小米，绿色无污染的</p>
+                    <p><span class="red">30,000</span>积分</p>
+                    <p class="gray">原价：<span>￥9,999.00</span></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <!--最多优惠-->
+      <div class="discount">
+        <div class="loveTit">
+          <div class="titLeft"></div>
+          <div class="titCon">最多优惠</div>
+          <div class="titRight"></div>
+        </div>
+        <div class="disContent">
+          <ul>
+            <a href="#">
+              <li>
+                <div class="dis">
+                  <div class="disImg">
+                    <img src="./images/icon-nai.jpg" alt="洗衣机">
+                  </div>
+                  <div class="disTit">
+                    <p class="disPtit">自家产的小米，绿色无污染的自家产的小米，绿色无污染的自家产的小米，绿色无污染的自家产的小米，绿色无污染的</p>
+                    <p class="red"><span>30,000</span> 积分+￥999.00</p>
+                  </div>
+                </div>
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                <div class="dis">
+                  <div class="disImg">
+                    <img src="./images/icon-nai.jpg" alt="洗衣机">
+                  </div>
+                  <div class="disTit">
+                    <p class="disPtit">自家产的小米</p>
+                    <p class="red"><span>30,000</span> 积分+9,999.00</p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <div class="dis">
+                  <div class="disImg">
+                    <img src="./images/icon-nai.jpg" alt="洗衣机">
+                  </div>
+                  <div class="disTit">
+                    <p class="disPtit">自家产的小米，绿色无污染的自家产的小米，绿色无污染的自家产的小米，绿色无污染的自家产的小米，绿色无污染的</p>
+                    <p class="red"><span>30,000</span> 积分+￥999.00</p>
+                  </div>
+                </div>
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                <div class="dis">
+                  <div class="disImg">
+                    <img src="./images/icon-nai.jpg" alt="洗衣机">
+                  </div>
+                  <div class="disTit">
+                    <p class="disPtit">自家产的小米</p>
+                    <p class="red"><span>30,000</span> 积分+9,999.00</p>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <!--查看更多 -->
+      <div class="more">
+        <a href="#">查看更多></a>
+      </div>
+
+      <!--最新上架-->
+      <div class="discount">
+        <div class="loveTit">
+          <div class="titLeft"></div>
+          <div class="titCon">最新上架</div>
+          <div class="titRight"></div>
+        </div>
+        <div class="disContent">
+          <ul>
+            <a href="#">
+              <li>
+                <div class="dis">
+                  <div class="disImg">
+                    <img src="./images/icon-nai.jpg" alt="洗衣机">
+                  </div>
+                  <div class="disTit">
+                    <p class="disPtit">自家产的小米，绿色无污染的自家产的小米，绿色无污染的自家产的小米，绿色无污染的自家产的小米，绿色无污染的</p>
+                    <p class="red"><span>30,000</span> 积分+￥999.00</p>
+                  </div>
+                </div>
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                <div class="dis">
+                  <div class="disImg">
+                    <img src="./images/icon-nai.jpg" alt="洗衣机">
+                  </div>
+                  <div class="disTit">
+                    <p class="disPtit">自家产的小米</p>
+                    <p class="red"><span>30,000</span> 积分+9,999.00</p>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <!--查看更多 -->
+      <div class="more">
+        <a href="#">查看更多></a>
+      </div>
+
+      <!--最多销量-->
+      <div class="moreSale">
+        <div class="loveTit">
+          <div class="titLeft"></div>
+          <div class="titCon">最多销量</div>
+          <div class="titRight"></div>
+        </div>
+        <div class="moreSaleCon">
+          <ul>
+            <a href="#">
+              <li>
+                <div class="saleLeft">
+                  <img src="./images/icon-zhi.jpg" alt="纸巾">
+                </div>
+                <div class="saleRight">
+                  <p class="saleTit">FSL佛山照明led吸顶灯大厅客厅灯餐厅灯具卧室灯长方</p>
+                  <p class="saleJf"><span>3000,000</span>&nbsp积分+￥9,999.00</p>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <div class="saleLeft">
+                  <img src="./images/icon-dian.jpg" alt="纸巾">
+                </div>
+                <div class="saleRight">
+                  <p class="saleTit">FSL佛山照明led吸顶灯 </p>
+                  <p class="saleJf"><span>3000,000</span>&nbsp积分+￥9,999.00</p>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <div class="saleLeft">
+                  <img src="./images/icon-zhi.jpg" alt="纸巾">
+                </div>
+                <div class="saleRight">
+                  <p class="saleTit">FSL佛山照明led吸顶灯大厅客厅灯餐厅灯具卧室灯长方</p>
+                  <p class="saleJf"><span>3000,000</span>&nbsp积分+￥9,999.00</p>
+                </div>
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                <div class="saleLeft">
+                  <img src="./images/icon-dian.jpg" alt="纸巾">
+                </div>
+                <div class="saleRight" style="border:none">
+                  <p class="saleTit">FSL佛山照明led吸顶灯 </p>
+                  <p class="saleJf"><span>3000,000</span>&nbsp积分+￥9,999.00</p>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="#">查看更多></a>
+        </div>
+      </div>
+
+      <!--一起善源-->
+      <div class="us">
+        <div class="loveTit">
+          <div class="titLeft"></div>
+          <div class="titCon">一起善源</div>
+          <div class="titRight"></div>
+        </div>
+        <div class="loveFont">分行推荐入驻善品，联合善企回馈爱心</div>
+        <div class="usContent">
+          <div class="province">
+            <a href="#" class="proFirst">
+              <img src="./images/icon-guang.jpg" alt="广东">
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <!--<img src="./images/icon-guang.jpg" alt="美的">-->
+              <span>虚位以待</span>
+            </a>
+          </div>
+          <div class="province">
+            <a href="#" class="proFirst">
+              <img src="./images/icon-guang.jpg" alt="广东">
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <!--<img src="./images/icon-guang.jpg" alt="美的">-->
+              <span>虚位以待</span>
+            </a>
+            <a href="#">
+              <!--<img src="./images/icon-guang.jpg" alt="美的">-->
+              <span>虚位以待</span>
+            </a>
+          </div>
+          <div class="province">
+            <a href="#" class="proFirst">
+              <img src="./images/icon-guang.jpg" alt="广东">
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+          </div>
+          <div class="province" style="border:none">
+            <a href="#" class="proFirst">
+              <img src="./images/icon-guang.jpg" alt="广东">
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <img src="./images/icon-guang.jpg" alt="美的">
+              <p>美的</p>
+            </a>
+            <a href="#">
+              <!--<img src="./images/icon-guang.jpg" alt="美的">-->
+              <span>虚位以待</span>
+            </a>
+          </div>
+        </div>
+        <div class="more">
+          <a href="#">查看更多></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

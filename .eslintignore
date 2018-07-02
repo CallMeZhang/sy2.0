@@ -1,0 +1,7 @@
+build/*.js
+config/*.js
+sh/*.js
+src/global.js
+src/modules/*
+src/*
+index.html
